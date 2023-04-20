@@ -4,6 +4,7 @@ import AdminLayout from './layouts/admin';
 import AppLayout from './layouts/app';
 import AuthLayout from './layouts/auth';
 import LandingLayout from './layouts/landing';
+import AboutPage from './pages/about';
 import NotFound from './pages/error/not-found';
 import Home from './pages/home';
 import LoginPage from './pages/login';
@@ -18,6 +19,10 @@ const routes: RouteObject[] = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: 'about',
+        element: <AboutPage />,
       },
     ],
   },
