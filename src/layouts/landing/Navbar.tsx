@@ -10,7 +10,7 @@ export default function Navbar() {
         <Link to="/" style={{ display: 'flex', color: 'inherit', textDecoration: 'none' }}>
           <Box component="img" src="/logo.svg" sx={{ mr: 1 }} />
           <Typography variant="h6" color="inherit" component="div">
-            {import.meta.env.VITE_APP_NAME}
+            {t('Toolbox by Guo Yunhe')}
           </Typography>
         </Link>
         <Stack direction="row" spacing={2} ml={3}>
