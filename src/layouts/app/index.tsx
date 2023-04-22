@@ -6,9 +6,7 @@ export default function AppLayout() {
   return (
     <Box height="100vh" display="flex" flexDirection="column" overflow="hidden">
       <Navbar />
-      <Box flex="1 1 auto">
-        <Outlet />
-      </Box>
+      <Outlet />
     </Box>
   );
 }
