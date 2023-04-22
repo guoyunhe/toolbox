@@ -7,7 +7,7 @@ import LanguageMenu from '../language-menu';
 export default function Navbar() {
   const { t } = useTranslation();
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
+    <AppBar position="static" color="inherit">
       <Toolbar>
         <Box
           component={Link}
