@@ -1,38 +1,51 @@
 import { Button, Menu, MenuItem } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { languages } from 'src/config/i18n';
+import useColorMode from 'src/hooks/useColorMode';
 
-export default function LanguageMenu() {
-  const { i18n } = useTranslation();
+export default function ColorModeMenu() {
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const currentLang = languages.find((lang) => i18n.language === lang.code);
+  const { colorMode, userColorMode, setUserColorMode, systemColorMode } = useColorMode();
 
-  useEffect(() => {
-    // sync html lang attribute
-    document.documentElement.setAttribute('lang', i18n.language.toLowerCase());
-  }, [i18n.language]);
+  const menu = [
+    {
+      code: 'auto',
+      name: t('Auto'),
+      icon: systemColorMode === 'dark' ? '🌙' : '☀️',
+    },
+    {
+      code: 'light',
+      name: t('Light'),
+      icon: '☀️',
+    },
+    {
+      code: 'dark',
+      name: t('Dark'),
+      icon: '🌙',
+    },
+  ];
 
   return (
     <>
       <Button
-        id="lang-menu-button"
-        aria-controls="lang-menu"
+        id="color-mode-menu-button"
+        aria-controls="color-mode-menu"
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         color="inherit"
       >
-        {currentLang?.flag} {currentLang?.name}
+        {colorMode === 'dark' ? '🌙' : '☀️'} {userColorMode}
       </Button>
       <Menu
-        id="lang-menu"
+        id="color-mode-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={() => {
@@ -48,19 +61,19 @@ export default function LanguageMenu() {
           horizontal: 'right',
         }}
         MenuListProps={{
-          'aria-labelledby': 'lang-menu-button',
+          'aria-labelledby': 'color-mode-menu-button',
         }}
       >
-        {languages.map((lang) => (
+        {menu.map((item) => (
           <MenuItem
-            key={lang.code}
+            key={item.code}
             onClick={() => {
-              i18n.changeLanguage(lang.code);
+              setUserColorMode(item.code as any);
               setAnchorEl(null);
             }}
-            selected={lang.code === currentLang?.code}
+            selected={userColorMode === item.code}
           >
-            {lang.flag} {lang.name}
+            {item.icon} {item.name}
           </MenuItem>
         ))}
       </Menu>

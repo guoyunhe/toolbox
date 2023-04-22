@@ -1,11 +1,14 @@
+import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
+import Navbar from 'src/components/navbar';
 
-// Layout of the main app for registered users
 export default function AppLayout() {
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <Outlet />
-    </div>
+    <Box height="100vh" display="flex" flexDirection="column" overflow="hidden">
+      <Navbar />
+      <Box flex="1 1 auto">
+        <Outlet />
+      </Box>
+    </Box>
   );
 }
