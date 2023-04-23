@@ -2,6 +2,7 @@ import { RouteObject } from 'react-router-dom';
 import AppLayout from './layouts/app';
 import LandingLayout from './layouts/landing';
 import AboutPage from './pages/about';
+import ColorPage from './pages/color';
 import NotFound from './pages/error/not-found';
 import Home from './pages/home';
 import JsonPage from './pages/json';
@@ -29,6 +30,10 @@ const routes: RouteObject[] = [
       {
         path: 'json',
         element: <JsonPage />,
+      },
+      {
+        path: 'color',
+        element: <ColorPage />,
       },
     ],
   },
