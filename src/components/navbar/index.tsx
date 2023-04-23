@@ -32,7 +32,7 @@ export default function Navbar() {
           JSON
         </NavButton>
         <NavButton to="/color" startIcon={<PaletteIcon />}>
-          Color
+          {t('Color')}
         </NavButton>
         <Box flex="1 1 auto" />
         <LanguageMenu />
