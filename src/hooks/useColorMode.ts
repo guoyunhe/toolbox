@@ -1,5 +1,5 @@
 import { PaletteMode, useMediaQuery } from '@mui/material';
-import useLocalStorage from './useLocalStorage';
+import useLocalStorage from 'use-local-storage';
 
 export default function useColorMode() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');

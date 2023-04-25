@@ -36,7 +36,8 @@
     "react-i18next": "^12.2.0",
     "react-json-tree": "^0.18.0",
     "react-router-dom": "^6.10.0",
-    "use-editable": "^2.3.3"
+    "use-editable": "^2.3.3",
+    "use-local-storage": "^3.0.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^9.2.0",
