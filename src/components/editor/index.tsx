@@ -38,7 +38,15 @@ export default function Editor({ value, onChange, language, style: componentStyl
       {({ className, style, tokens, getTokenProps }) => (
         <pre
           className={className}
-          style={{ ...style, margin: 0, padding: 10, outline: 'none', ...componentStyle }}
+          style={{
+            ...style,
+            margin: 0,
+            padding: 10,
+            outline: 'none',
+            overflow: 'auto',
+            width: '100%',
+            ...componentStyle,
+          }}
           ref={editorRef}
           autoCorrect="off"
           autoCapitalize="off"

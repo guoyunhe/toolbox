@@ -74,14 +74,14 @@ export default function JsonPage() {
 
   return (
     <Box sx={{ flex: '1 1 auto', display: 'flex' }}>
-      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <Tabs value={1}>
           <Tab label={t('Input')} value={1} />
         </Tabs>
         <Editor value={code} onChange={setCode} language="json" style={{ flex: '1 1 auto' }} />
       </Box>
       <Box width={10} />
-      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <Tabs value={1}>
           <Tab label={t('Parsed')} value={1} />
         </Tabs>
