@@ -5,8 +5,6 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ColorPreview from './ColorPreview';
 
-console.log(colors);
-
 export default function ColorPage() {
   const { t } = useTranslation();
   const [code, setCode] = useState('#ff0000');

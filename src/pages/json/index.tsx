@@ -1,4 +1,5 @@
-import { Box, Tab, Tabs } from '@mui/material';
+import { Share } from '@mui/icons-material';
+import { Box, Button, Stack, Tab, Tabs } from '@mui/material';
 import JSON5 from 'json5';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -73,25 +74,29 @@ export default function JsonPage() {
   }, [code]);
 
   return (
-    <Box sx={{ flex: '1 1 auto', display: 'flex' }}>
-      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        <Tabs value={1}>
-          <Tab label={t('Input')} value={1} />
-        </Tabs>
-        <Editor value={code} onChange={setCode} language="json" style={{ flex: '1 1 auto' }} />
+    <>
+      <Stack direction="row" spacing={2} p={2}>
+        <Button variant="contained" color="success" startIcon={<Share />}>
+          {t('Share')}
+        </Button>
+      </Stack>
+      <Box sx={{ flex: '1 1 auto', display: 'flex' }}>
+        <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+          <Editor value={code} onChange={setCode} language="json" style={{ flex: '1 1 auto' }} />
+        </Box>
+        <Box width={10} />
+        <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+          <Tabs value={1}>
+            <Tab label={t('Parsed')} value={1} />
+          </Tabs>
+          <JSONTree
+            data={data}
+            theme={colorMode === 'light' ? lightTheme : darkTheme}
+            hideRoot
+            sortObjectKeys
+          />
+        </Box>
       </Box>
-      <Box width={10} />
-      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        <Tabs value={1}>
-          <Tab label={t('Parsed')} value={1} />
-        </Tabs>
-        <JSONTree
-          data={data}
-          theme={colorMode === 'light' ? lightTheme : darkTheme}
-          hideRoot
-          sortObjectKeys
-        />
-      </Box>
-    </Box>
+    </>
   );
 }
