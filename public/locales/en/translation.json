@@ -1,17 +1,17 @@
 {
+  "Auto": "Auto",
+  "Light": "Light",
+  "Dark": "Dark",
   "Terms": "Terms",
   "Privacy": "Privacy",
   "About": "About",
   "Toolbox by Guo Yunhe": "Toolbox by Guo Yunhe",
-  "Features": "Features",
-  "Pricing": "Pricing",
-  "Support": "Support",
-  "Login": "Login",
-  "Register": "Register",
+  "Color": "Color",
+  "Support name, hex, rgba, hsl, cmyk": "Support name, hex, rgba, hsl, cmyk",
+  "Invalid color!": "Invalid color!",
   "Something Impressive": "Something Impressive",
   "Content Block": "Content Block",
-  "Email": "Email",
-  "Password": "Password",
-  "Name": "Name",
-  "Confirm password": "Confirm password"
+  "Input": "Input",
+  "Tree": "Tree",
+  "TypeScript": "TypeScript"
 }

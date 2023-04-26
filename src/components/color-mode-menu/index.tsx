@@ -1,3 +1,4 @@
+import { DarkMode, LightMode } from '@mui/icons-material';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -18,19 +19,21 @@ export default function ColorModeMenu() {
     {
       code: 'auto',
       name: t('Auto'),
-      icon: systemColorMode === 'dark' ? '🌙' : '☀️',
+      icon: systemColorMode === 'dark' ? <DarkMode /> : <LightMode />,
     },
     {
       code: 'light',
       name: t('Light'),
-      icon: '☀️',
+      icon: <LightMode />,
     },
     {
       code: 'dark',
       name: t('Dark'),
-      icon: '🌙',
+      icon: <DarkMode />,
     },
   ];
+
+  const active = menu.find((item) => item.code === userColorMode);
 
   return (
     <>
@@ -41,8 +44,9 @@ export default function ColorModeMenu() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         color="inherit"
+        startIcon={active?.icon}
       >
-        {colorMode === 'dark' ? '🌙' : '☀️'} {userColorMode}
+        {active?.name}
       </Button>
       <Menu
         id="color-mode-menu"
@@ -73,7 +77,9 @@ export default function ColorModeMenu() {
             }}
             selected={userColorMode === item.code}
           >
-            {item.icon} {item.name}
+            {item.icon}
+            <span style={{ marginRight: 8 }} />
+            {item.name}
           </MenuItem>
         ))}
       </Menu>

@@ -3,7 +3,7 @@ import glob from 'fast-glob';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
-import { languageCodes } from 'src/config/i18n.js';
+import { languageCodes } from '../src/config/i18n.js';
 
 const localeRoot = 'public/locales';
 const sourceDir = localeRoot + '/en';
