@@ -6,14 +6,7 @@ import Editor from 'src/components/editor';
 import TreeView from './TreeView';
 import TypeView from './TypeView';
 
-const placeholder = `// comments are supported
-{
-  "foo": "bar",
-  "nested": "{\\"foo\\":\\"bar\\"}",
-  "count": 123,
-  "success": true,
-  "status": null
-}`;
+import placeholder from './placeholder.jsonc?raw';
 
 export default function JsonPage() {
   const { t } = useTranslation();
