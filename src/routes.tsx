@@ -1,11 +1,14 @@
+import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
 import AppLayout from './layouts/app';
 import LandingLayout from './layouts/landing';
-import AboutPage from './pages/about';
-import ColorPage from './pages/color';
 import NotFound from './pages/error/not-found';
 import Home from './pages/home';
-import JsonPage from './pages/json';
+
+const JsonPage = lazy(() => import('./pages/json'));
+const ColorPage = lazy(() => import('./pages/color'));
+
+const AboutPage = lazy(() => import('./pages/about'));
 
 const routes: RouteObject[] = [
   {

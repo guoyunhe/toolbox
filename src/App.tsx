@@ -1,6 +1,6 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { Box, CircularProgress, CssBaseline, ThemeProvider } from '@mui/material';
 import { createCompactTheme } from 'mui-material-compact';
-import { useMemo } from 'react';
+import { Suspense, useMemo } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import useColorMode from './hooks/useColorMode';
 import routes from './routes';
@@ -21,9 +21,26 @@ export default function App() {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <Suspense
+      fallback={
+        <Box
+          sx={{
+            position: 'fixed',
+            width: '100vw',
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <CircularProgress />
+        </Box>
+      }
+    >
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </Suspense>
   );
 }
