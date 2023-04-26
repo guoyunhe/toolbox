@@ -1,5 +1,7 @@
+import { FormControlLabel, Stack, Switch } from '@mui/material';
 import { Options } from 'quicktype-core';
 import { CSSProperties, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Editor from 'src/components/editor';
 import jsonToType from './jsonToType';
 
@@ -9,6 +11,8 @@ export interface TypeViewProps {
 }
 
 export default function TypeView({ data, style }: TypeViewProps) {
+  const { t } = useTranslation('json');
+
   // QuickType options
   const [options, setOptions] = useState<Partial<Options>>({
     alphabetizeProperties: true,
@@ -30,7 +34,55 @@ export default function TypeView({ data, style }: TypeViewProps) {
     jsonToType(samples, options).then(({ lines }) => {
       setCode(lines.join('\n'));
     });
-  }, [data]);
+  }, [data, options]);
 
-  return <Editor language="typescript" code={code} disabled style={style} />;
+  return (
+    <>
+      <Editor language="typescript" code={code} disabled style={style} />
+      <Stack direction="row">
+        <FormControlLabel
+          control={
+            <Switch
+              checked={options.alphabetizeProperties}
+              onChange={(e, v) =>
+                setOptions((prev) => ({
+                  ...prev,
+                  alphabetizeProperties: v,
+                }))
+              }
+            />
+          }
+          label={t('Sort properties')}
+        />
+        <FormControlLabel
+          control={
+            <Switch
+              checked={options.allPropertiesOptional}
+              onChange={(e, v) =>
+                setOptions((prev) => ({
+                  ...prev,
+                  allPropertiesOptional: v,
+                }))
+              }
+            />
+          }
+          label={t('Make all properties optional')}
+        />
+        <FormControlLabel
+          control={
+            <Switch
+              checked={options.rendererOptions?.['prefer-unions'] as any}
+              onChange={(e, v) =>
+                setOptions((prev) => ({
+                  ...prev,
+                  rendererOptions: { ...prev.rendererOptions, 'prefer-unions': v as any },
+                }))
+              }
+            />
+          }
+          label={t('ENUMs to unions')}
+        />
+      </Stack>
+    </>
+  );
 }
