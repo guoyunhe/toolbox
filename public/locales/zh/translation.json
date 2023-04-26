@@ -10,8 +10,5 @@
   "Support name, hex, rgba, hsl, cmyk": "支持名称，十六进制，rgba，hsl，cmyk",
   "Invalid color!": "颜色无效！",
   "Something Impressive": "Something Impressive",
-  "Content Block": "Content Block",
-  "Input": "输入",
-  "Tree": "树",
-  "TypeScript": "打字稿"
+  "Content Block": "Content Block"
 }

@@ -9,7 +9,7 @@ import TypeView from './TypeView';
 import placeholder from './placeholder.jsonc?raw';
 
 export default function JsonPage() {
-  const { t } = useTranslation();
+  const { t } = useTranslation('json');
   const [code, setCode] = useState(placeholder);
   const [tab, setTab] = useState(1);
 
@@ -39,7 +39,7 @@ export default function JsonPage() {
       <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)}>
           <Tab label={t('Tree')} value={1} />
-          <Tab label={t('TypeScript')} value={2} />
+          <Tab label="TypeScript" value={2} />
         </Tabs>
         {tab === 1 && <TreeView data={data} />}
         {tab === 2 && <TypeView data={data} style={{ flex: '1 1 auto' }} />}

@@ -10,8 +10,5 @@
   "Support name, hex, rgba, hsl, cmyk": "Support name, hex, rgba, hsl, cmyk",
   "Invalid color!": "Invalid color!",
   "Something Impressive": "Something Impressive",
-  "Content Block": "Content Block",
-  "Input": "Input",
-  "Tree": "Tree",
-  "TypeScript": "TypeScript"
+  "Content Block": "Content Block"
 }

@@ -1,5 +1,7 @@
 {
+  "Input": "输入",
+  "Tree": "树状图",
   "Sort properties": "排序属性",
-  "Make all properties optional": "使所有属性可选",
-  "ENUMs to unions": "ENUM到工会"
+  "Make all properties optional": "所有属性可选",
+  "ENUMs to unions": "ENUM 转 Union"
 }

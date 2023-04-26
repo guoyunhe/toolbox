@@ -1,4 +1,6 @@
 {
+  "Input": "Input",
+  "Tree": "Tree",
   "Sort properties": "Sort properties",
   "Make all properties optional": "Make all properties optional",
   "ENUMs to unions": "ENUMs to unions"
