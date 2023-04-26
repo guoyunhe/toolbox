@@ -6,13 +6,20 @@ import useColorMode from 'src/hooks/useColorMode';
 import { useEditable } from 'use-editable';
 
 export interface EditorProps {
-  value: string;
+  code: string;
   onChange?: (value: string) => void;
   language: Language;
+  disabled?: boolean;
   style?: CSSProperties;
 }
 
-export default function Editor({ value, onChange, language, style: componentStyle }: EditorProps) {
+export default function Editor({
+  code,
+  onChange,
+  disabled,
+  language,
+  style: componentStyle,
+}: EditorProps) {
   const { colorMode } = useColorMode();
   const editorRef = useRef(null);
 
@@ -24,14 +31,14 @@ export default function Editor({ value, onChange, language, style: componentStyl
   );
 
   useEditable(editorRef, onEditableChange, {
-    disabled: false,
+    disabled,
     indentation: 2,
   });
 
   return (
     <Highlight
       {...defaultProps}
-      code={value}
+      code={code}
       language={language}
       theme={colorMode === 'dark' ? darkTheme : lightTheme}
     >

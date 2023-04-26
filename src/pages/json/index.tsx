@@ -1,11 +1,10 @@
-import { Share } from '@mui/icons-material';
-import { Box, Button, Stack, Tab, Tabs } from '@mui/material';
+import { Box, Tab, Tabs } from '@mui/material';
 import JSON5 from 'json5';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { JSONTree } from 'react-json-tree';
 import Editor from 'src/components/editor';
-import useColorMode from 'src/hooks/useColorMode';
+import TreeView from './TreeView';
+import TypeView from './TypeView';
 
 const placeholder = `// comments are supported
 {
@@ -16,48 +15,10 @@ const placeholder = `// comments are supported
   "status": null
 }`;
 
-const lightTheme = {
-  base00: '#fbfbfb', // background
-  base01: '#383830',
-  base02: '#49483e',
-  base03: '#989fb1', // object/array desc
-  base04: '#a59f85',
-  base05: '#f8f8f2',
-  base06: '#f5f4f1',
-  base07: '#f9f8f5',
-  base08: '#0c969b', // null
-  base09: '#aa0982', // number, boolean
-  base0A: '#f4bf75',
-  base0B: '#4876d6', // string
-  base0C: '#a1efe4',
-  base0D: '#0c969b', // key
-  base0E: '#ae81ff',
-  base0F: '#cc6633',
-};
-
-const darkTheme = {
-  base00: '#011627', // background
-  base01: '#383830',
-  base02: '#49483e',
-  base03: '#637777', // object/array desc
-  base04: '#a59f85',
-  base05: '#f8f8f2',
-  base06: '#f5f4f1',
-  base07: '#f9f8f5',
-  base08: '#7fdbca', // null
-  base09: '#f78c6c', // number, boolean
-  base0A: '#f4bf75',
-  base0B: '#addb67', // string
-  base0C: '#a1efe4',
-  base0D: '#80cbc4', // key
-  base0E: '#ae81ff',
-  base0F: '#cc6633',
-};
-
 export default function JsonPage() {
-  const { colorMode } = useColorMode();
   const { t } = useTranslation();
   const [code, setCode] = useState(placeholder);
+  const [tab, setTab] = useState(1);
 
   const data = useMemo(() => {
     try {
@@ -74,29 +35,22 @@ export default function JsonPage() {
   }, [code]);
 
   return (
-    <>
-      <Stack direction="row" spacing={2} p={2}>
-        <Button variant="contained" color="success" startIcon={<Share />}>
-          {t('Share')}
-        </Button>
-      </Stack>
-      <Box sx={{ flex: '1 1 auto', display: 'flex' }}>
-        <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-          <Editor value={code} onChange={setCode} language="json" style={{ flex: '1 1 auto' }} />
-        </Box>
-        <Box width={10} />
-        <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-          <Tabs value={1}>
-            <Tab label={t('Parsed')} value={1} />
-          </Tabs>
-          <JSONTree
-            data={data}
-            theme={colorMode === 'light' ? lightTheme : darkTheme}
-            hideRoot
-            sortObjectKeys
-          />
-        </Box>
+    <Box sx={{ flex: '1 1 auto', display: 'flex', overflow: 'hidden' }}>
+      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        <Tabs value={1}>
+          <Tab label={t('Input')} value={1} />
+        </Tabs>
+        <Editor code={code} onChange={setCode} language="json" style={{ flex: '1 1 auto' }} />
       </Box>
-    </>
+      <Box width={10} />
+      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        <Tabs value={tab} onChange={(e, v) => setTab(v)}>
+          <Tab label={t('Tree')} value={1} />
+          <Tab label={t('TypeScript')} value={2} />
+        </Tabs>
+        {tab === 1 && <TreeView data={data} />}
+        {tab === 2 && <TypeView data={data} style={{ flex: '1 1 auto' }} />}
+      </Box>
+    </Box>
   );
 }
