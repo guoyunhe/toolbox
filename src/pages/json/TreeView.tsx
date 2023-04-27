@@ -18,6 +18,11 @@ const lightTheme = {
   base0D: '#0c969b', // key
   base0E: '#ae81ff',
   base0F: '#cc6633',
+  tree: {
+    margin: 0,
+    flex: '1 1 auto',
+    overflow: 'auto',
+  },
 };
 
 const darkTheme = {
@@ -37,6 +42,11 @@ const darkTheme = {
   base0D: '#80cbc4', // key
   base0E: '#ae81ff',
   base0F: '#cc6633',
+  tree: {
+    margin: 0,
+    flex: '1 1 auto',
+    overflow: 'auto',
+  },
 };
 
 export interface TreeViewProps {
