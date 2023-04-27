@@ -1,8 +1,8 @@
 import { FormControlLabel, Stack, Switch } from '@mui/material';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { JSONTree } from 'react-json-tree';
 import useColorMode from 'src/hooks/useColorMode';
+import useLocalStorage from 'use-local-storage';
 
 const lightTheme = {
   base00: '#fbfbfb', // background
@@ -63,7 +63,7 @@ export interface TreeViewProps {
 export default function TreeView({ data }: TreeViewProps) {
   const { colorMode } = useColorMode();
   const { t } = useTranslation('json');
-  const [sortKeys, setSortKeys] = useState(false);
+  const [sortKeys, setSortKeys] = useLocalStorage('json_tree_sort_keys', false);
 
   return (
     <>
