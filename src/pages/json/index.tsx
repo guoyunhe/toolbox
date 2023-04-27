@@ -9,6 +9,7 @@ import TypeView from './TypeView';
 import placeholder from './placeholder.jsonc?raw';
 
 export default function JsonPage() {
+  console.log(import.meta.env.VITE_APP_VERSION);
   const { t } = useTranslation('json');
   const [code, setCode] = useState(placeholder);
   const [tab, setTab] = useState(1);

@@ -1,58 +1,21 @@
-import { Box, colors, Typography } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import JsonCard from '../json/JsonCard';
 
 export default function Home() {
   const { t } = useTranslation();
   return (
-    <Box>
-      <Box
-        component="header"
-        bgcolor={colors.amber[300]}
-        height={400}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography variant="h2">{t('Something Impressive')}</Typography>
-      </Box>
-      <Box
-        component="section"
-        height={400}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography variant="h4">{t('Content Block')}</Typography>
-      </Box>
-      <Box
-        component="section"
-        height={400}
-        bgcolor={colors.blueGrey[200]}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography variant="h4">{t('Content Block')}</Typography>
-      </Box>
-      <Box
-        component="section"
-        height={400}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography variant="h4">{t('Content Block')}</Typography>
-      </Box>
-      <Box
-        component="section"
-        height={400}
-        bgcolor={colors.blueGrey[200]}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography variant="h4">{t('Content Block')}</Typography>
-      </Box>
+    <Box py={4}>
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <JsonCard />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <JsonCard />
+          </Grid>
+        </Grid>
+      </Container>
     </Box>
   );
 }
