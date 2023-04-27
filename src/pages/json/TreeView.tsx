@@ -22,6 +22,8 @@ const lightTheme = {
     margin: 0,
     flex: '1 1 auto',
     overflow: 'auto',
+    fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace',
+    fontSize: 14,
   },
 };
 
@@ -46,6 +48,8 @@ const darkTheme = {
     margin: 0,
     flex: '1 1 auto',
     overflow: 'auto',
+    fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace',
+    fontSize: 14,
   },
 };
 
