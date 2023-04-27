@@ -52,6 +52,9 @@ export default function Editor({
             outline: 'none',
             overflow: 'auto',
             width: '100%',
+            fontFamily:
+              'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace',
+            fontSize: 14,
             ...componentStyle,
           }}
           ref={editorRef}
