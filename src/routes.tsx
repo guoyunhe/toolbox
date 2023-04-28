@@ -4,11 +4,11 @@ import AppLayout from './layouts/app';
 import LandingLayout from './layouts/landing';
 import NotFound from './pages/error/not-found';
 import Home from './pages/home';
-import SvgPage from './pages/svg';
 
 const JsonPage = lazy(() => import('./pages/json'));
 const XmlPage = lazy(() => import('./pages/xml'));
 const ColorPage = lazy(() => import('./pages/color'));
+const SvgPage = lazy(() => import('./pages/svg'));
 
 const AboutPage = lazy(() => import('./pages/about'));
 

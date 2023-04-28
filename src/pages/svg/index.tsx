@@ -6,6 +6,7 @@ import DownloadButton from 'src/components/download-button';
 import Editor from 'src/components/editor';
 import byteSize from 'src/utils/byteSize';
 import { optimize } from 'svgo';
+import ReactView from './ReactView';
 
 export default function SvgPage() {
   const { t } = useTranslation('json');
@@ -67,7 +68,7 @@ export default function SvgPage() {
             </Stack>
           </>
         )}
-        {tab === 2 && <div />}
+        {tab === 2 && <ReactView svgCode={code} />}
       </Box>
     </Box>
   );
