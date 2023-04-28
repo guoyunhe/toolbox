@@ -1,26 +1,19 @@
 import { Upload } from '@mui/icons-material';
 import { Box, Button, Stack, Tab, Tabs } from '@mui/material';
-import { ChangeEventHandler, useMemo, useState } from 'react';
+import { ChangeEventHandler, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Editor from 'src/components/editor';
-import jsonDeepParse from '../json/utils/jsonDeepParse';
-import jsonShallowParse from '../json/utils/jsonShallowParse';
+import { optimize } from 'svgo';
 
 export default function SvgPage() {
   const { t } = useTranslation('json');
   const [code, setCode] = useState('');
   const [tab, setTab] = useState(1);
+  const [minified, setMinified] = useState('');
 
-  const minified = useMemo(() => {
-    try {
-      if (deepParse) {
-        return jsonDeepParse(code);
-      } else {
-        return jsonShallowParse(code);
-      }
-    } catch (e) {
-      return {};
-    }
+  useEffect(() => {
+    const result = optimize(code, {});
+    setMinified(result.data);
   }, [code]);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -62,7 +55,9 @@ export default function SvgPage() {
           <Tab label={t('Minify')} value={1} />
           <Tab label="React" value={2} />
         </Tabs>
-        {tab === 1 && <div />}
+        {tab === 1 && (
+          <Editor code={minified} disabled language="markup" style={{ flex: '1 1 auto' }} />
+        )}
         {tab === 2 && <div />}
       </Box>
     </Box>
