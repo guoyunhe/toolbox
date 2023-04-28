@@ -1,4 +1,5 @@
 import {
+  Code as CodeIcon,
   DataObject as DataObjectIcon,
   Menu,
   PaletteOutlined as PaletteIcon,
@@ -30,6 +31,9 @@ export default function Navbar() {
         </Box>
         <NavButton to="/json" startIcon={<DataObjectIcon />}>
           JSON
+        </NavButton>
+        <NavButton to="/xml" startIcon={<CodeIcon />}>
+          XML
         </NavButton>
         <NavButton to="/color" startIcon={<PaletteIcon />}>
           {t('Color')}

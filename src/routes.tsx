@@ -6,6 +6,7 @@ import NotFound from './pages/error/not-found';
 import Home from './pages/home';
 
 const JsonPage = lazy(() => import('./pages/json'));
+const XmlPage = lazy(() => import('./pages/xml'));
 const ColorPage = lazy(() => import('./pages/color'));
 
 const AboutPage = lazy(() => import('./pages/about'));
@@ -33,6 +34,10 @@ const routes: RouteObject[] = [
       {
         path: 'json',
         element: <JsonPage />,
+      },
+      {
+        path: 'xml',
+        element: <XmlPage />,
       },
       {
         path: 'color',
