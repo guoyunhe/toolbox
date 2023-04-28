@@ -64,8 +64,6 @@ export default function SvgPage() {
             <Editor code={minified} language="markup" style={{ flex: '1 1 auto' }} />
             <Stack direction="row" spacing={2} p={2}>
               <DownloadButton data={minified} filename="minified.svg" />
-              <Box flexGrow={1} />
-              <Box>{byteSize(minified)}</Box>
             </Stack>
           </>
         )}
