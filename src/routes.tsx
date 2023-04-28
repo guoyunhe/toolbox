@@ -4,6 +4,7 @@ import AppLayout from './layouts/app';
 import LandingLayout from './layouts/landing';
 import NotFound from './pages/error/not-found';
 import Home from './pages/home';
+import SvgPage from './pages/svg';
 
 const JsonPage = lazy(() => import('./pages/json'));
 const XmlPage = lazy(() => import('./pages/xml'));
@@ -38,6 +39,10 @@ const routes: RouteObject[] = [
       {
         path: 'xml',
         element: <XmlPage />,
+      },
+      {
+        path: 'svg',
+        element: <SvgPage />,
       },
       {
         path: 'color',

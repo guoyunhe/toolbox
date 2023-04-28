@@ -1,7 +1,8 @@
 import {
   Code as CodeIcon,
   DataObject as DataObjectIcon,
-  Menu,
+  DrawOutlined as DrawIcon,
+  Menu as MenuIcon,
   PaletteOutlined as PaletteIcon,
 } from '@mui/icons-material';
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
@@ -18,7 +19,7 @@ export default function Navbar() {
     <AppBar position="static" color="inherit">
       <Toolbar>
         <IconButton edge="start" onClick={() => store.set('sidebarOpen', true)}>
-          <Menu />
+          <MenuIcon />
         </IconButton>
         <Box
           component={Link}
@@ -34,6 +35,9 @@ export default function Navbar() {
         </NavButton>
         <NavButton to="/xml" startIcon={<CodeIcon />}>
           XML
+        </NavButton>
+        <NavButton to="/svg" startIcon={<DrawIcon />}>
+          SVG
         </NavButton>
         <NavButton to="/color" startIcon={<PaletteIcon />}>
           {t('Color')}
