@@ -2,7 +2,9 @@ import { Upload } from '@mui/icons-material';
 import { Box, Button, Stack, Tab, Tabs } from '@mui/material';
 import { ChangeEventHandler, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import DownloadButton from 'src/components/download-button';
 import Editor from 'src/components/editor';
+import byteSize from 'src/utils/byteSize';
 import { optimize } from 'svgo';
 
 export default function SvgPage() {
@@ -47,6 +49,8 @@ export default function SvgPage() {
               hidden
             />
           </Button>
+          <Box flexGrow={1} />
+          <Box>{byteSize(code)}</Box>
         </Stack>
       </Box>
       <Box width={10} />
@@ -56,7 +60,14 @@ export default function SvgPage() {
           <Tab label="React" value={2} />
         </Tabs>
         {tab === 1 && (
-          <Editor code={minified} disabled language="markup" style={{ flex: '1 1 auto' }} />
+          <>
+            <Editor code={minified} language="markup" style={{ flex: '1 1 auto' }} />
+            <Stack direction="row" spacing={2} p={2}>
+              <DownloadButton data={minified} filename="minified.svg" />
+              <Box flexGrow={1} />
+              <Box>{byteSize(minified)}</Box>
+            </Stack>
+          </>
         )}
         {tab === 2 && <div />}
       </Box>
