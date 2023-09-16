@@ -2,11 +2,9 @@ import {
   Code as CodeIcon,
   DataObject as DataObjectIcon,
   DrawOutlined as DrawIcon,
-  Menu as MenuIcon,
   PaletteOutlined as PaletteIcon,
 } from '@mui/icons-material';
-import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
-import { store } from 'lowdux';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ColorModeMenu from '../color-mode-menu';
@@ -18,16 +16,13 @@ export default function Navbar() {
   return (
     <AppBar position="static" color="inherit">
       <Toolbar>
-        <IconButton edge="start" onClick={() => store.set('sidebarOpen', true)}>
-          <MenuIcon />
-        </IconButton>
         <Box
           component={Link}
           to="/"
           sx={{ display: 'flex', color: 'inherit', textDecoration: 'none', mr: 2 }}
         >
-          <Typography variant="h6" color="inherit" component="div">
-            {t('Toolbox by Guo Yunhe')}
+          <Typography fontSize={20} color="inherit" component="div">
+            🧰 {t('Toolbox by Guo Yunhe')}
           </Typography>
         </Box>
         <NavButton to="/json" startIcon={<DataObjectIcon />}>
