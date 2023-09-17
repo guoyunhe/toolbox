@@ -46,7 +46,7 @@ export default function ReactOutputViewer({ svgCode }: ReactOutputViewerProps) {
 
   return (
     <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-      <Toolbar variant="dense" disableGutters>
+      <Toolbar disableGutters>
         <Chip
           color="primary"
           variant="outlined"

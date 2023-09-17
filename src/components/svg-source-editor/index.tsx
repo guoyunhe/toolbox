@@ -12,7 +12,7 @@ export interface SvgSourceEditorProps {
 export default function SvgSourceEditor({ value, onChange, sx }: SvgSourceEditorProps) {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', overflow: 'hidden', ...sx }}>
-      <Toolbar variant="dense" disableGutters>
+      <Toolbar disableGutters>
         <Chip color="warning" variant="outlined" label="SVG" avatar={<Avatar src={svgLogo} />} />
         <UploadButton onUpload={onChange} accept="application/svg+xml,image/svg+xml" />
       </Toolbar>
