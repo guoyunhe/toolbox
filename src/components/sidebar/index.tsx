@@ -1,7 +1,8 @@
 import { ArrowRight } from '@mui/icons-material';
-import { Avatar, Drawer, List, ListItemButton, ListSubheader } from '@mui/material';
+import { Avatar, Drawer, List, ListItemText, ListSubheader } from '@mui/material';
 import jsonLogo from '../../images/json-logo.svg';
 import svgLogo from '../../images/svg-logo.svg';
+import NavListItemButton from './NavListItemButton';
 
 export default function Sidebar() {
   return (
@@ -25,15 +26,15 @@ export default function Sidebar() {
           </ListSubheader>
         }
       >
-        <ListItemButton>
+        <NavListItemButton to="/json">
           JSON <ArrowRight /> Object
-        </ListItemButton>
-        <ListItemButton>
+        </NavListItemButton>
+        <NavListItemButton to="/json">
           JSON <ArrowRight /> Formatted
-        </ListItemButton>
-        <ListItemButton>
+        </NavListItemButton>
+        <NavListItemButton to="/json">
           JSON <ArrowRight /> TypeScript Type
-        </ListItemButton>
+        </NavListItemButton>
       </List>
       <List
         subheader={
@@ -46,24 +47,21 @@ export default function Sidebar() {
           </ListSubheader>
         }
       >
-        <ListItemButton>
-          SVG <ArrowRight /> Minified
-        </ListItemButton>
-        <ListItemButton>
-          SVG <ArrowRight /> Formatted
-        </ListItemButton>
-        <ListItemButton>
-          SVG <ArrowRight /> Inline URL
-        </ListItemButton>
-        <ListItemButton>
-          SVG <ArrowRight /> Inline CSS
-        </ListItemButton>
-        <ListItemButton>
-          SVG <ArrowRight /> React Component
-        </ListItemButton>
-        <ListItemButton>
-          SVG <ArrowRight /> PNG/WEBP/AVIF
-        </ListItemButton>
+        <NavListItemButton to="svg-minify">
+          <ListItemText primary="SVG minify" />
+        </NavListItemButton>
+        <NavListItemButton to="svg-format">
+          <ListItemText primary="SVG format" />
+        </NavListItemButton>
+        <NavListItemButton to="/svg-to-inline-css">
+          <ListItemText primary="SVG to inline CSS" />
+        </NavListItemButton>
+        <NavListItemButton to="/svg-to-react">
+          <ListItemText primary="SVG to React component" />
+        </NavListItemButton>
+        <NavListItemButton to="/svg-to-image">
+          <ListItemText primary="SVG to PNG/WEBP/AVIF" />
+        </NavListItemButton>
       </List>
     </Drawer>
   );

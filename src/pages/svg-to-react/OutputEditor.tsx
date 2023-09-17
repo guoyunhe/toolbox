@@ -14,39 +14,41 @@ export default function ReactOutputViewer({ svgCode }: ReactOutputViewerProps) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    axios
-      .post('https://api.react-svgr.com/api/svgr', {
-        code: svgCode,
-        options: {
-          dimensions: true,
-          icon: false,
-          native: false,
-          typescript: false,
-          ref: false,
-          memo: false,
-          titleProp: false,
-          descProp: false,
-          expandProps: 'end',
-          replaceAttrValues: {},
-          svgProps: {},
-          exportType: 'default',
-          namedExport: 'ReactComponent',
-          jsxRuntime: 'classic',
-          svgo: true,
-          svgoConfig: {
-            plugins: [{ name: 'preset-default', params: { overrides: { removeTitle: false } } }],
+    if (svgCode.trim()) {
+      setLoading(true);
+      axios
+        .post('https://api.react-svgr.com/api/svgr', {
+          code: svgCode,
+          options: {
+            dimensions: true,
+            icon: false,
+            native: false,
+            typescript: false,
+            ref: false,
+            memo: false,
+            titleProp: false,
+            descProp: false,
+            expandProps: 'end',
+            replaceAttrValues: {},
+            svgProps: {},
+            exportType: 'default',
+            namedExport: 'ReactComponent',
+            jsxRuntime: 'classic',
+            svgo: true,
+            svgoConfig: {
+              plugins: [{ name: 'preset-default', params: { overrides: { removeTitle: false } } }],
+            },
+            prettier: true,
+            prettierConfig: { semi: false },
           },
-          prettier: true,
-          prettierConfig: { semi: false },
-        },
-      })
-      .then((res) => {
-        setReactCode(res.data.output || '');
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+        })
+        .then((res) => {
+          setReactCode(res.data.output || '');
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
   }, [svgCode]);
 
   return (

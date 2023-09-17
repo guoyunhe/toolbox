@@ -65,6 +65,7 @@ export default function Editor({ code, onChange, disabled, loading, language, sx
               outline: 'none',
               overflow: 'auto',
               width: '100%',
+              height: '100%',
               fontFamily:
                 'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace',
               fontSize: 12,
