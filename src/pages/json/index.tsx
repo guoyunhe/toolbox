@@ -1,7 +1,7 @@
 import { Box, FormControlLabel, Stack, Switch, Tab, Tabs } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Editor from 'src/components/editor';
+import Editor from '../../components/editor';
 import TreeView from './TreeView';
 import TypeView from './TypeView';
 

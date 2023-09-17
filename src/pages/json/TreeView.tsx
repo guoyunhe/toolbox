@@ -1,8 +1,8 @@
 import { FormControlLabel, Stack, Switch } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { JSONTree } from 'react-json-tree';
-import useColorMode from 'src/hooks/useColorMode';
 import useLocalStorage from 'use-local-storage';
+import useColorMode from '../../hooks/useColorMode';
 
 const lightTheme = {
   base00: '#fbfbfb', // background

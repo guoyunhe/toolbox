@@ -2,7 +2,7 @@ import { Box, Button, Menu, MenuItem } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { languages } from 'src/config/i18n';
+import { languages } from '../../config/i18n';
 
 export default function LanguageMenu() {
   const { i18n } = useTranslation();

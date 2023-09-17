@@ -3,8 +3,8 @@ import Highlight, { Language, defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/vsDark';
 import lightTheme from 'prism-react-renderer/themes/vsLight';
 import { Fragment, useCallback, useRef } from 'react';
-import useColorMode from 'src/hooks/useColorMode';
 import { useEditable } from 'use-editable';
+import useColorMode from '../../hooks/useColorMode';
 
 export interface EditorProps {
   code: string;

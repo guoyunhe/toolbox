@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { RouteObject } from 'react-router-dom';
+import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/app';
 
 // 1451kB, 需要优化
@@ -7,7 +7,7 @@ const JsonPage = lazy(() => import('./pages/json'));
 const XmlPage = lazy(() => import('./pages/xml'));
 const ColorPage = lazy(() => import('./pages/color'));
 // 637kB, 需要优化
-const SvgPage = lazy(() => import('./pages/svg'));
+const SvgMinifyPage = lazy(() => import('./pages/svg-minify'));
 const SvgToReactPage = lazy(() => import('./pages/svg-to-react'));
 
 const routes: RouteObject[] = [
@@ -24,8 +24,8 @@ const routes: RouteObject[] = [
         element: <XmlPage />,
       },
       {
-        path: 'svg',
-        element: <SvgPage />,
+        path: 'svg-minify',
+        element: <SvgMinifyPage />,
       },
       {
         path: 'svg-to-react',
@@ -39,4 +39,6 @@ const routes: RouteObject[] = [
   },
 ];
 
-export default routes;
+const router = createBrowserRouter(routes);
+
+export default router;

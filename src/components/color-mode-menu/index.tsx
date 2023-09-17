@@ -3,7 +3,7 @@ import { Button, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import useColorMode from 'src/hooks/useColorMode';
+import useColorMode from '../../hooks/useColorMode';
 
 export default function ColorModeMenu() {
   const { t } = useTranslation();

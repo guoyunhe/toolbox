@@ -1,11 +1,9 @@
 import { Box, CircularProgress, CssBaseline, ThemeProvider } from '@mui/material';
 import { createCompactTheme } from 'mui-material-compact';
 import { Suspense, useMemo } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import useColorMode from './hooks/useColorMode';
-import routes from './routes';
-
-const router = createBrowserRouter(routes);
+import router from './router';
 
 export default function App() {
   const { colorMode } = useColorMode();
@@ -17,7 +15,7 @@ export default function App() {
           mode: colorMode,
         },
       }),
-    [colorMode]
+    [colorMode],
   );
 
   return (
