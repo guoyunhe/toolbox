@@ -1,5 +1,7 @@
 import { ArrowRight } from '@mui/icons-material';
-import { Drawer, List, ListItemButton, ListSubheader } from '@mui/material';
+import { Avatar, Drawer, List, ListItemButton, ListSubheader } from '@mui/material';
+import jsonLogo from '../../images/json-logo.svg';
+import svgLogo from '../../images/svg-logo.svg';
 
 export default function Sidebar() {
   return (
@@ -12,7 +14,17 @@ export default function Sidebar() {
         [`& .MuiDrawer-paper`]: { width: 250, top: 64, boxSizing: 'border-box' },
       }}
     >
-      <List subheader={<ListSubheader>JSON</ListSubheader>}>
+      <List
+        subheader={
+          <ListSubheader>
+            <Avatar
+              src={jsonLogo}
+              sx={{ display: 'inline-block', width: 24, height: 24, my: -0.8, mr: 1 }}
+            />
+            JSON
+          </ListSubheader>
+        }
+      >
         <ListItemButton>
           JSON <ArrowRight /> Object
         </ListItemButton>
@@ -23,7 +35,17 @@ export default function Sidebar() {
           JSON <ArrowRight /> TypeScript Type
         </ListItemButton>
       </List>
-      <List subheader={<ListSubheader>SVG</ListSubheader>}>
+      <List
+        subheader={
+          <ListSubheader>
+            <Avatar
+              src={svgLogo}
+              sx={{ display: 'inline-block', width: 24, height: 24, my: -0.5, mr: 1 }}
+            />
+            SVG
+          </ListSubheader>
+        }
+      >
         <ListItemButton>
           SVG <ArrowRight /> Minified
         </ListItemButton>
