@@ -1,6 +1,6 @@
 import Highlight, { Language, defaultProps } from 'prism-react-renderer';
-import darkTheme from 'prism-react-renderer/themes/nightOwl';
-import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
+import darkTheme from 'prism-react-renderer/themes/vsDark';
+import lightTheme from 'prism-react-renderer/themes/vsLight';
 import { CSSProperties, Fragment, useCallback, useRef } from 'react';
 import useColorMode from 'src/hooks/useColorMode';
 import { useEditable } from 'use-editable';
@@ -27,7 +27,7 @@ export default function Editor({
     (code: string) => {
       onChange?.(code.slice(0, -1)); // fix line break issues
     },
-    [onChange]
+    [onChange],
   );
 
   useEditable(editorRef, onEditableChange, {
@@ -54,7 +54,11 @@ export default function Editor({
             width: '100%',
             fontFamily:
               'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace',
-            fontSize: 14,
+            fontSize: 12,
+            borderRadius: 8,
+            borderWidth: 1,
+            borderStyle: 'solid',
+            borderColor: colorMode === 'dark' ? '#555555' : '#dddddd',
             ...componentStyle,
           }}
           ref={editorRef}
