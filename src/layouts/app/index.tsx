@@ -8,7 +8,7 @@ export default function AppLayout() {
   return (
     <Box height="100vh" display="flex" flexDirection="column" overflow="hidden">
       <Navbar />
-      <Box sx={{ display: 'flex', justifyContent: 'stretch' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'stretch', overflow: 'hidden' }}>
         <Sidebar />
         <Suspense
           fallback={

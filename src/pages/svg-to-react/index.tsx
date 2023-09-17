@@ -10,9 +10,10 @@ export default function SvgToReactPage() {
     <Box
       sx={{
         display: 'flex',
-        flex: '1 1 auto',
+        flex: '1 1 100%',
         gap: 2,
         px: 2,
+        pb: 2,
         overflow: 'hidden',
       }}
     >

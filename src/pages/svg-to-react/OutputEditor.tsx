@@ -45,7 +45,7 @@ export default function ReactOutputViewer({ svgCode }: ReactOutputViewerProps) {
   }, [svgCode]);
 
   return (
-    <Box sx={{ flex: '1 1 50%', overflow: 'hidden' }}>
+    <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       <Toolbar variant="dense" disableGutters>
         <Chip
           color="primary"
@@ -55,7 +55,7 @@ export default function ReactOutputViewer({ svgCode }: ReactOutputViewerProps) {
         />
         <DownloadButton data={reactCode} filename="SvgComponent.tsx" />
       </Toolbar>
-      <Editor code={reactCode} language="jsx" style={{ flex: '1 1 auto' }} />
+      <Editor code={reactCode} language="jsx" style={{ flex: '1 1 auto', overflow: 'auto' }} />
     </Box>
   );
 }

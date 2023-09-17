@@ -1,5 +1,4 @@
 import { Avatar, Box, Chip, SxProps, Toolbar } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import svgLogo from '../../images/svg-logo.svg';
 import Editor from '../editor';
 import UploadButton from '../upload-button';
@@ -11,16 +10,13 @@ export interface SvgSourceEditorProps {
 }
 
 export default function SvgSourceEditor({ value, onChange, sx }: SvgSourceEditorProps) {
-  const { t } = useTranslation();
   return (
-    <Box sx={sx}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', overflow: 'hidden', ...sx }}>
       <Toolbar variant="dense" disableGutters>
         <Chip color="warning" variant="outlined" label="SVG" avatar={<Avatar src={svgLogo} />} />
-        <UploadButton onUpload={onChange} accept="application/svg+xml,image/svg+xml">
-          {t('Upload SVG')}
-        </UploadButton>
+        <UploadButton onUpload={onChange} accept="application/svg+xml,image/svg+xml" />
       </Toolbar>
-      <Editor code={value} onChange={onChange} language="markup" />
+      <Editor code={value} onChange={onChange} language="markup" style={{ flex: '1 1 100%' }} />
     </Box>
   );
 }
