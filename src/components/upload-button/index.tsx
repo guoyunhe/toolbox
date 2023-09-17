@@ -17,13 +17,13 @@ export default function UploadButton({ onUpload, accept, children, ...props }: U
       const reader = new FileReader();
       reader.readAsText(file, 'utf-8');
       reader.onload = function (evt) {
-        onUpload(evt.target?.result as string);
+        onUpload((evt.target?.result as string) || '');
       };
     }
   };
 
   return (
-    <Button variant="contained" startIcon={<UploadIcon />} component="label" {...props}>
+    <Button startIcon={<UploadIcon />} component="label" {...props}>
       {children || t('Upload')}
       <input type="file" onChange={handleChange} accept={accept} hidden />
     </Button>

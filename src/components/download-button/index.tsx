@@ -17,7 +17,7 @@ export default function DownloadButton({ data, filename, ...props }: DownloadBut
     pom.click();
   };
   return (
-    <Button variant="contained" startIcon={<DownloadIcon />} onClick={handleClick} {...props}>
+    <Button startIcon={<DownloadIcon />} onClick={handleClick} {...props}>
       {t('Download')} ({byteSize(data)})
     </Button>
   );
