@@ -1,7 +1,7 @@
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { PaletteModeButton } from 'mui-palette-mode';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import ColorModeMenu from '../color-mode-menu';
 import LanguageMenu from '../language-menu';
 
 export default function Navbar() {
@@ -21,7 +21,7 @@ export default function Navbar() {
 
         <Box flex="1 1 auto" />
         <LanguageMenu />
-        <ColorModeMenu />
+        <PaletteModeButton />
       </Toolbar>
     </AppBar>
   );

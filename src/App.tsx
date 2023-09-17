@@ -1,23 +1,11 @@
-import { Box, CircularProgress, CssBaseline, ThemeProvider } from '@mui/material';
-import { createCompactTheme } from 'mui-material-compact';
-import { Suspense, useMemo } from 'react';
+import { Box, CircularProgress, CssBaseline } from '@mui/material';
+import { DualThemeProvider } from 'mui-palette-mode';
+import { Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';
-import useColorMode from './hooks/useColorMode';
 import router from './router';
+import { darkTheme, lightTheme } from './themes';
 
 export default function App() {
-  const { colorMode } = useColorMode();
-
-  const theme = useMemo(
-    () =>
-      createCompactTheme({
-        palette: {
-          mode: colorMode,
-        },
-      }),
-    [colorMode],
-  );
-
   return (
     <Suspense
       fallback={
@@ -35,10 +23,10 @@ export default function App() {
         </Box>
       }
     >
-      <ThemeProvider theme={theme}>
+      <DualThemeProvider lightTheme={lightTheme} darkTheme={darkTheme}>
         <CssBaseline />
         <RouterProvider router={router} />
-      </ThemeProvider>
+      </DualThemeProvider>
     </Suspense>
   );
 }
