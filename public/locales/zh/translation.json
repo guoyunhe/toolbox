@@ -1,11 +1,13 @@
 {
-  "Auto": "自动",
   "Light": "亮色",
   "Dark": "暗色",
+  "Auto": "自动",
+  "Download": "下载",
   "Terms": "条款",
   "Privacy": "隐私",
   "About": "关于",
   "Toolbox by Guo Yunhe": "鹤仙人の工具箱",
+  "Upload": "上传",
   "Color": "颜色",
   "Support name, hex, rgba, hsl, cmyk": "支持名称，十六进制，rgba，hsl，cmyk",
   "Invalid color!": "颜色无效！"

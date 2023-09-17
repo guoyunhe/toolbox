@@ -1,11 +1,13 @@
 {
-  "Auto": "Auto",
   "Light": "Light",
   "Dark": "Dark",
+  "Auto": "Auto",
+  "Download": "Download",
   "Terms": "Terms",
   "Privacy": "Privacy",
   "About": "About",
   "Toolbox by Guo Yunhe": "Toolbox by Guo Yunhe",
+  "Upload": "Upload",
   "Color": "Color",
   "Support name, hex, rgba, hsl, cmyk": "Support name, hex, rgba, hsl, cmyk",
   "Invalid color!": "Invalid color!"
