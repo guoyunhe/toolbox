@@ -12,7 +12,7 @@ export default function Sidebar() {
       sx={{
         width: 250,
         flexShrink: 0,
-        [`& .MuiDrawer-paper`]: { width: 250, top: 64, boxSizing: 'border-box' },
+        [`& .MuiDrawer-paper`]: { width: 250, top: 64, boxSizing: 'border-box', zIndex: 0 },
       }}
     >
       <List
