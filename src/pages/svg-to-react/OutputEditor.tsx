@@ -11,8 +11,10 @@ export interface ReactOutputViewerProps {
 
 export default function ReactOutputViewer({ svgCode }: ReactOutputViewerProps) {
   const [reactCode, setReactCode] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .post('https://api.react-svgr.com/api/svgr', {
         code: svgCode,
@@ -41,6 +43,9 @@ export default function ReactOutputViewer({ svgCode }: ReactOutputViewerProps) {
       })
       .then((res) => {
         setReactCode(res.data.output || '');
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [svgCode]);
 
@@ -55,7 +60,13 @@ export default function ReactOutputViewer({ svgCode }: ReactOutputViewerProps) {
         />
         <DownloadButton data={reactCode} filename="SvgComponent.tsx" />
       </Toolbar>
-      <Editor code={reactCode} language="jsx" style={{ flex: '1 1 auto', overflow: 'auto' }} />
+      <Editor
+        loading={loading}
+        disabled
+        code={reactCode}
+        language="jsx"
+        sx={{ flex: '1 1 auto', overflow: 'auto' }}
+      />
     </Box>
   );
 }

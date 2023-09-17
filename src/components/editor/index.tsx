@@ -1,25 +1,21 @@
+import { Box, LinearProgress, Paper, SxProps } from '@mui/material';
 import Highlight, { Language, defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/vsDark';
 import lightTheme from 'prism-react-renderer/themes/vsLight';
-import { CSSProperties, Fragment, useCallback, useRef } from 'react';
+import { Fragment, useCallback, useRef } from 'react';
 import useColorMode from 'src/hooks/useColorMode';
 import { useEditable } from 'use-editable';
 
 export interface EditorProps {
   code: string;
   onChange?: (value: string) => void;
+  loading?: boolean;
   language: Language;
   disabled?: boolean;
-  style?: CSSProperties;
+  sx?: SxProps;
 }
 
-export default function Editor({
-  code,
-  onChange,
-  disabled,
-  language,
-  style: componentStyle,
-}: EditorProps) {
+export default function Editor({ code, onChange, disabled, loading, language, sx }: EditorProps) {
   const { colorMode } = useColorMode();
   const editorRef = useRef(null);
 
@@ -36,48 +32,62 @@ export default function Editor({
   });
 
   return (
-    <Highlight
-      {...defaultProps}
-      code={code}
-      language={language}
-      theme={colorMode === 'dark' ? darkTheme : lightTheme}
+    <Paper
+      variant="outlined"
+      sx={{
+        ...sx,
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'stretch',
+        alignItems: 'stretch',
+        overflow: 'hidden',
+      }}
     >
-      {({ className, style, tokens, getTokenProps }) => (
-        <pre
-          className={className}
-          style={{
-            ...style,
-            margin: 0,
-            padding: 10,
-            outline: 'none',
-            overflow: 'auto',
-            width: '100%',
-            fontFamily:
-              'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace',
-            fontSize: 12,
-            borderRadius: 8,
-            borderWidth: 1,
-            borderStyle: 'solid',
-            borderColor: colorMode === 'dark' ? '#555555' : '#dddddd',
-            ...componentStyle,
-          }}
-          ref={editorRef}
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck="false"
-        >
-          {tokens.map((line, i) => (
-            <Fragment key={i}>
-              {line
-                .filter((token) => !token.empty)
-                .map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              {'\n'}
-            </Fragment>
-          ))}
-        </pre>
+      {loading && (
+        <LinearProgress
+          sx={{ position: 'absolute', left: 4, top: 4, right: 4, borderRadius: 2, zIndex: 19 }}
+        />
       )}
-    </Highlight>
+      <Highlight
+        {...defaultProps}
+        code={code}
+        language={language}
+        theme={colorMode === 'dark' ? darkTheme : lightTheme}
+      >
+        {({ className, style, tokens, getTokenProps }) => (
+          <Box
+            component="pre"
+            className={className}
+            sx={{
+              ...style,
+              m: 0,
+              p: 1,
+              outline: 'none',
+              overflow: 'auto',
+              width: '100%',
+              fontFamily:
+                'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace',
+              fontSize: 12,
+              position: 'relative',
+            }}
+            ref={editorRef}
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+          >
+            {tokens.map((line, i) => (
+              <Fragment key={i}>
+                {line
+                  .filter((token) => !token.empty)
+                  .map((token, key) => (
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                {'\n'}
+              </Fragment>
+            ))}
+          </Box>
+        )}
+      </Highlight>
+    </Paper>
   );
 }

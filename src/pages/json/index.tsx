@@ -34,7 +34,7 @@ export default function JsonPage() {
         <Tabs value={1}>
           <Tab label={t('Input')} value={1} />
         </Tabs>
-        <Editor code={code} onChange={setCode} language="json" style={{ flex: '1 1 auto' }} />
+        <Editor code={code} onChange={setCode} language="json" sx={{ flex: '1 1 auto' }} />
         <Stack direction="row">
           <FormControlLabel
             control={

@@ -47,7 +47,7 @@ export default function ReactView({ svgCode }: ReactViewProps) {
   }, [svgCode]);
   return (
     <>
-      <Editor code={reactCode} language="jsx" style={{ flex: '1 1 auto' }} />
+      <Editor code={reactCode} language="jsx" sx={{ flex: '1 1 auto' }} />
       <Stack direction="row" spacing={2} p={2}>
         <DownloadButton data={reactCode} filename="SvgComponent.tsx" />
       </Stack>

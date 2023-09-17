@@ -25,7 +25,7 @@ export default function SvgPage() {
         <Tabs value={1}>
           <Tab label={t('Input')} value={1} />
         </Tabs>
-        <Editor code={code} onChange={setCode} language="markup" style={{ flex: '1 1 auto' }} />
+        <Editor code={code} onChange={setCode} language="markup" sx={{ flex: '1 1 auto' }} />
         <Stack direction="row" spacing={2} p={2}>
           <UploadButton onUpload={(c) => setCode(c)} accept="application/svg+xml,image/svg+xml">
             {t('Upload SVG')}
@@ -42,7 +42,7 @@ export default function SvgPage() {
         </Tabs>
         {tab === 1 && (
           <>
-            <Editor code={minified} language="markup" style={{ flex: '1 1 auto' }} />
+            <Editor code={minified} language="markup" sx={{ flex: '1 1 auto' }} />
             <Stack direction="row" spacing={2} p={2}>
               <DownloadButton data={minified} filename="minified.svg" />
             </Stack>

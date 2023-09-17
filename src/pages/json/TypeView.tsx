@@ -39,7 +39,7 @@ export default function TypeView({ data, style }: TypeViewProps) {
 
   return (
     <>
-      <Editor language="typescript" code={code} disabled style={style} />
+      <Editor language="typescript" code={code} disabled sx={style} />
       <Stack direction="row">
         <FormControlLabel
           control={<Switch checked={sortKeys} onChange={(e, v) => setSortKeys(v)} sx={{ ml: 1 }} />}
