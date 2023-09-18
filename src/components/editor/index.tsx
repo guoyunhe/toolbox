@@ -1,15 +1,23 @@
-import { Box, LinearProgress, Paper, SxProps, useTheme } from '@mui/material';
+import { Box, LinearProgress, Paper, SxProps, Toolbar, useTheme } from '@mui/material';
 import Highlight, { Language, defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/vsDark';
 import lightTheme from 'prism-react-renderer/themes/vsLight';
 import { Fragment, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
+import svgLogo from '../../images/svg-logo.svg';
+
+const languageMap: Record<string, { language: Language; logo: string }> = {
+  svg: {
+    language: 'markup',
+    logo: svgLogo,
+  },
+};
 
 export interface EditorProps {
   code: string;
   onChange?: (value: string) => void;
   loading?: boolean;
-  language: Language;
+  language: string;
   disabled?: boolean;
   sx?: SxProps;
 }
@@ -37,11 +45,16 @@ export default function Editor({ code, onChange, disabled, loading, language, sx
         ...sx,
         position: 'relative',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'stretch',
         alignItems: 'stretch',
         overflow: 'hidden',
       }}
     >
+      <Toolbar variant="dense" disableGutters sx={{ px: 1, py: 0 }}>
+        <Box component="img" src={languageMap[language]?.logo} sx={{ width: 24, height: 24 }} />
+        <Box sx={{ textTransform: 'uppercase', ml: 1 }}>{language}</Box>
+      </Toolbar>
       {loading && (
         <LinearProgress
           sx={{ position: 'absolute', left: 4, top: 4, right: 4, borderRadius: 2, zIndex: 19 }}
@@ -50,7 +63,7 @@ export default function Editor({ code, onChange, disabled, loading, language, sx
       <Highlight
         {...defaultProps}
         code={code}
-        language={language}
+        language={languageMap[language]?.language}
         theme={theme.palette.mode === 'dark' ? darkTheme : lightTheme}
       >
         {({ className, style, tokens, getTokenProps }) => (

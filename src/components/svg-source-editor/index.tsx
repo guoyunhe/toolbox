@@ -16,7 +16,7 @@ export default function SvgSourceEditor({ value, onChange, sx }: SvgSourceEditor
         <Chip color="warning" variant="outlined" label="SVG" avatar={<Avatar src={svgLogo} />} />
         <UploadButton onUpload={onChange} accept="application/svg+xml,image/svg+xml" />
       </Toolbar>
-      <Editor code={value} onChange={onChange} language="markup" sx={{ flex: '1 1 100%' }} />
+      <Editor code={value} onChange={onChange} language="svg" sx={{ flex: '1 1 100%' }} />
     </Box>
   );
 }
