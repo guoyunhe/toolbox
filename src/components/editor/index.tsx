@@ -4,6 +4,7 @@ import darkTheme from 'prism-react-renderer/themes/vsDark';
 import lightTheme from 'prism-react-renderer/themes/vsLight';
 import { Fragment, ReactNode, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
+import cssLogo from '../../images/css-logo.svg';
 import jsonLogo from '../../images/json-logo.svg';
 import reactLogo from '../../images/react-logo.svg';
 import svgLogo from '../../images/svg-logo.svg';
@@ -11,6 +12,10 @@ import DownloadButton from '../download-button';
 import UploadButton from '../upload-button';
 
 const languageMap: Record<string, { language: Language; logo: string }> = {
+  css: {
+    language: 'css',
+    logo: cssLogo,
+  },
   svg: {
     language: 'markup',
     logo: svgLogo,

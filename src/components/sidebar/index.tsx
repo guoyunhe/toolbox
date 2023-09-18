@@ -30,7 +30,7 @@ export default function Sidebar() {
           JSON <ArrowRight /> Object
         </NavListItemButton>
         <NavListItemButton to="/json">
-          JSON <ArrowRight /> Formatted
+          JSON <ArrowRight /> CSS
         </NavListItemButton>
         <NavListItemButton to="/json">
           JSON <ArrowRight /> TypeScript Type
@@ -50,11 +50,11 @@ export default function Sidebar() {
         <NavListItemButton to="svg-minify">
           <ListItemText primary="SVG minify" />
         </NavListItemButton>
-        <NavListItemButton to="svg-format">
-          <ListItemText primary="SVG format" />
+        <NavListItemButton to="/svg-to-url">
+          <ListItemText primary="SVG to CSS" />
         </NavListItemButton>
-        <NavListItemButton to="/svg-to-inline-css">
-          <ListItemText primary="SVG to inline CSS" />
+        <NavListItemButton to="/svg-to-css">
+          <ListItemText primary="SVG to CSS" />
         </NavListItemButton>
         <NavListItemButton to="/svg-to-react">
           <ListItemText primary="SVG to React component" />
