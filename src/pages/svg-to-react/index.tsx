@@ -1,4 +1,4 @@
-import { useLocalStorage } from '@guoyunhe/react-storage';
+import { useSessionStorage } from '@guoyunhe/react-storage';
 import { Box } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -8,7 +8,7 @@ import defaultSvg from '../../data/default-svg.svg?raw';
 
 export default function SvgToReactPage() {
   const { t } = useTranslation();
-  const [svgCode, setSvgCode] = useLocalStorage('svg_input', defaultSvg);
+  const [svgCode, setSvgCode] = useSessionStorage('svg_input', defaultSvg);
   const [reactCode, setReactCode] = useState('');
   const [loading, setLoading] = useState(false);
 
