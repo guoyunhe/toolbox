@@ -16,7 +16,7 @@ const languageMap: Record<string, { language: Language; logo: string }> = {
     language: 'css',
     logo: cssLogo,
   },
-  svg: {
+  html: {
     language: 'markup',
     logo: svgLogo,
   },
@@ -27,6 +27,10 @@ const languageMap: Record<string, { language: Language; logo: string }> = {
   jsx: {
     language: 'jsx',
     logo: reactLogo,
+  },
+  svg: {
+    language: 'markup',
+    logo: svgLogo,
   },
   tsx: {
     language: 'tsx',
