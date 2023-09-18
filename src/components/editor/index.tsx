@@ -4,12 +4,17 @@ import darkTheme from 'prism-react-renderer/themes/vsDark';
 import lightTheme from 'prism-react-renderer/themes/vsLight';
 import { Fragment, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
+import jsonLogo from '../../images/json-logo.svg';
 import svgLogo from '../../images/svg-logo.svg';
 
 const languageMap: Record<string, { language: Language; logo: string }> = {
   svg: {
     language: 'markup',
     logo: svgLogo,
+  },
+  json: {
+    language: 'json',
+    logo: jsonLogo,
   },
 };
 
