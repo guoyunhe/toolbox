@@ -51,7 +51,7 @@ export default function Sidebar() {
           <ListItemText primary="SVG minify" />
         </NavListItemButton>
         <NavListItemButton to="/svg-to-url">
-          <ListItemText primary="SVG to CSS" />
+          <ListItemText primary="SVG to URL" />
         </NavListItemButton>
         <NavListItemButton to="/svg-to-css">
           <ListItemText primary="SVG to CSS" />

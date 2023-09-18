@@ -9,6 +9,7 @@ const ColorPage = lazy(() => import('./pages/color'));
 // 637kB, 需要优化
 const SvgMinifyPage = lazy(() => import('./pages/svg-minify'));
 const SvgToCssPage = lazy(() => import('./pages/svg-to-css'));
+const SvgToUrlPage = lazy(() => import('./pages/svg-to-url'));
 const SvgToReactPage = lazy(() => import('./pages/svg-to-react'));
 
 const routes: RouteObject[] = [
@@ -27,6 +28,10 @@ const routes: RouteObject[] = [
       {
         path: 'svg-minify',
         element: <SvgMinifyPage />,
+      },
+      {
+        path: 'svg-to-url',
+        element: <SvgToUrlPage />,
       },
       {
         path: 'svg-to-css',

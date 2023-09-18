@@ -4,16 +4,13 @@ import { useEffect, useState } from 'react';
 import Editor from '../../components/editor';
 import defaultSvg from '../../data/default-svg.svg?raw';
 
-export default function SvgToCssPage() {
+export default function SvgToUrlPage() {
   const [svgCode, setSvgCode] = useSessionStorage('svg_input', defaultSvg);
-  const [cssCode, setCssCode] = useState('');
+  const [url, setUrl] = useState('');
 
   useEffect(() => {
     if (svgCode.trim()) {
-      setCssCode(`div {
-  background-image: url("data:image/svg+xml,${encodeURIComponent(svgCode)}");
-}
-`);
+      setUrl(`data:image/svg+xml,${encodeURIComponent(svgCode)}`);
     }
   }, [svgCode]);
 
@@ -34,7 +31,7 @@ export default function SvgToCssPage() {
         upload
         sx={{ flex: '1 1 50%' }}
       />
-      <Editor value={cssCode} language="css" sx={{ flex: '1 1 50%' }} />
+      <Editor title="URL" value={url} language="txt" sx={{ flex: '1 1 50%' }} />
     </Box>
   );
 }
