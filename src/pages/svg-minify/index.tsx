@@ -1,12 +1,14 @@
+import { useLocalStorage } from '@guoyunhe/react-storage';
 import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { optimize } from 'svgo';
 import Editor from '../../components/editor';
+import defaultSvg from '../../data/default-svg.svg?raw';
 
 export default function SvgMinifyPage() {
   const { t } = useTranslation();
-  const [svgCode, setSvgCode] = useState('');
+  const [svgCode, setSvgCode] = useLocalStorage('svg_input', defaultSvg);
   const [minified, setMinified] = useState('');
 
   useEffect(() => {
