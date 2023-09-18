@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 export interface UploadButtonProps extends ButtonProps {
   accept?: string;
-  onUpload: (code: string) => void;
+  onUpload?: (code: string) => void;
 }
 
 export default function UploadButton({ onUpload, accept, children, ...props }: UploadButtonProps) {
@@ -17,7 +17,7 @@ export default function UploadButton({ onUpload, accept, children, ...props }: U
       const reader = new FileReader();
       reader.readAsText(file, 'utf-8');
       reader.onload = function (evt) {
-        onUpload((evt.target?.result as string) || '');
+        onUpload?.((evt.target?.result as string) || '');
       };
     }
   };

@@ -6,6 +6,8 @@ import { Fragment, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
 import jsonLogo from '../../images/json-logo.svg';
 import svgLogo from '../../images/svg-logo.svg';
+import DownloadButton from '../download-button';
+import UploadButton from '../upload-button';
 
 const languageMap: Record<string, { language: Language; logo: string }> = {
   svg: {
@@ -24,10 +26,21 @@ export interface EditorProps {
   loading?: boolean;
   language: string;
   disabled?: boolean;
+  download?: string | boolean;
+  upload?: boolean;
   sx?: SxProps;
 }
 
-export default function Editor({ code, onChange, disabled, loading, language, sx }: EditorProps) {
+export default function Editor({
+  code,
+  onChange,
+  disabled,
+  loading,
+  language,
+  download,
+  upload,
+  sx,
+}: EditorProps) {
   const theme = useTheme();
   const editorRef = useRef(null);
 
@@ -59,6 +72,14 @@ export default function Editor({ code, onChange, disabled, loading, language, sx
       <Toolbar variant="dense" disableGutters sx={{ px: 1, py: 0 }}>
         <Box component="img" src={languageMap[language]?.logo} sx={{ width: 24, height: 24 }} />
         <Box sx={{ textTransform: 'uppercase', ml: 1 }}>{language}</Box>
+        <Box sx={{ flex: '1 1 auto' }} />
+        {download && (
+          <DownloadButton
+            data={code}
+            filename={typeof download === 'string' ? download : 'code.' + language}
+          />
+        )}
+        {upload && <UploadButton value={code} onUpload={onChange} />}
       </Toolbar>
       {loading && (
         <LinearProgress
