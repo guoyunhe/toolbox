@@ -10,5 +10,7 @@
   "Upload": "Upload",
   "Color": "Color",
   "Support name, hex, rgba, hsl, cmyk": "Support name, hex, rgba, hsl, cmyk",
-  "Invalid color!": "Invalid color!"
+  "Invalid color!": "Invalid color!",
+  "Minfied SVG": "Minfied SVG",
+  "React component": "React component"
 }

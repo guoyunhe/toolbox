@@ -32,7 +32,7 @@ export default function SvgMinifyPage() {
         sx={{ flex: '1 1 50%' }}
       />
       <Editor
-        title={t('Minfied')}
+        title={t('Minfied SVG')}
         value={minified}
         language="svg"
         download="minified.svg"
