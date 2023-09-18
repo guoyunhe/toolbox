@@ -2,7 +2,7 @@ import { Box, LinearProgress, Paper, SxProps, Toolbar, useTheme } from '@mui/mat
 import Highlight, { Language, defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/vsDark';
 import lightTheme from 'prism-react-renderer/themes/vsLight';
-import { Fragment, useCallback, useRef } from 'react';
+import { Fragment, ReactNode, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
 import jsonLogo from '../../images/json-logo.svg';
 import svgLogo from '../../images/svg-logo.svg';
@@ -21,22 +21,24 @@ const languageMap: Record<string, { language: Language; logo: string }> = {
 };
 
 export interface EditorProps {
-  code: string;
+  value: string;
   onChange?: (value: string) => void;
   loading?: boolean;
   language: string;
   disabled?: boolean;
+  title?: ReactNode;
   download?: string | boolean;
   upload?: boolean;
   sx?: SxProps;
 }
 
 export default function Editor({
-  code,
+  value: code,
   onChange,
   disabled,
   loading,
   language,
+  title,
   download,
   upload,
   sx,
@@ -71,7 +73,7 @@ export default function Editor({
     >
       <Toolbar variant="dense" disableGutters sx={{ px: 1, py: 0 }}>
         <Box component="img" src={languageMap[language]?.logo} sx={{ width: 24, height: 24 }} />
-        <Box sx={{ textTransform: 'uppercase', ml: 1 }}>{language}</Box>
+        <Box sx={{ ml: 1 }}>{title || language.toUpperCase()}</Box>
         <Box sx={{ flex: '1 1 auto' }} />
         {download && (
           <DownloadButton

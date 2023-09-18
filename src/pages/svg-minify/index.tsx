@@ -1,11 +1,11 @@
-import { Box, Toolbar } from '@mui/material';
+import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { optimize } from 'svgo';
-import DownloadButton from '../../components/download-button';
 import Editor from '../../components/editor';
-import SvgSourceEditor from '../../components/svg-source-editor';
 
 export default function SvgMinifyPage() {
+  const { t } = useTranslation();
   const [svgCode, setSvgCode] = useState('');
   const [minified, setMinified] = useState('');
 
@@ -20,22 +20,24 @@ export default function SvgMinifyPage() {
         display: 'flex',
         flex: '1 1 100%',
         gap: 2,
-        px: 2,
-        pb: 2,
+        p: 2,
         overflow: 'hidden',
       }}
     >
-      <SvgSourceEditor
+      <Editor
+        language="svg"
         value={svgCode}
         onChange={setSvgCode}
-        sx={{ flex: '1 1 50%', overflow: 'hidden' }}
+        upload
+        sx={{ flex: '1 1 50%' }}
       />
-      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        <Toolbar disableGutters>
-          <DownloadButton data={minified} filename="minified.svg" />
-        </Toolbar>
-        <Editor code={minified} language="markup" sx={{ flex: '1 1 auto' }} />
-      </Box>
+      <Editor
+        title={t('Minfied')}
+        value={minified}
+        language="svg"
+        download="minified.svg"
+        sx={{ flex: '1 1 50%' }}
+      />
     </Box>
   );
 }

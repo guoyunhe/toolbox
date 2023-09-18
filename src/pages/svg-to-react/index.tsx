@@ -1,12 +1,11 @@
-import { Avatar, Box, Chip, Toolbar } from '@mui/material';
+import { Box } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import DownloadButton from '../../components/download-button';
+import { useTranslation } from 'react-i18next';
 import Editor from '../../components/editor';
-import SvgSourceEditor from '../../components/svg-source-editor';
-import reactLogo from '../../images/react-logo.svg';
 
 export default function SvgToReactPage() {
+  const { t } = useTranslation();
   const [svgCode, setSvgCode] = useState('');
   const [reactCode, setReactCode] = useState('');
   const [loading, setLoading] = useState(false);
@@ -55,28 +54,25 @@ export default function SvgToReactPage() {
         display: 'flex',
         flex: '1 1 100%',
         gap: 2,
-        px: 2,
-        pb: 2,
+        p: 2,
         overflow: 'hidden',
       }}
     >
-      <SvgSourceEditor
+      <Editor
+        language="svg"
         value={svgCode}
         onChange={setSvgCode}
-        sx={{ flex: '1 1 50%', overflow: 'hidden' }}
+        upload
+        sx={{ flex: '1 1 50%' }}
       />
-      <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        <Toolbar disableGutters>
-          <Chip
-            color="primary"
-            variant="outlined"
-            label="React"
-            avatar={<Avatar src={reactLogo} />}
-          />
-          <DownloadButton data={reactCode} filename="SvgComponent.tsx" />
-        </Toolbar>
-        <Editor loading={loading} code={reactCode} language="jsx" sx={{ flex: '1 1 auto' }} />
-      </Box>
+      <Editor
+        title={t('React component')}
+        loading={loading}
+        value={reactCode}
+        language="jsx"
+        download="SvgComponent.tsx"
+        sx={{ flex: '1 1 50%' }}
+      />
     </Box>
   );
 }
