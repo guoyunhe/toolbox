@@ -23,6 +23,10 @@ const languageMap: Record<string, { language: Language; logo: string }> = {
     language: 'jsx',
     logo: reactLogo,
   },
+  tsx: {
+    language: 'tsx',
+    logo: reactLogo,
+  },
 };
 
 export interface EditorProps {
