@@ -39,8 +39,7 @@
     "react-json-tree": "^0.18.0",
     "react-router-dom": "^6.16.0",
     "svgo": "^3.0.2",
-    "use-editable": "^2.3.3",
-    "use-local-storage": "^3.0.0"
+    "use-editable": "^2.3.3"
   },
   "devDependencies": {
     "@testing-library/dom": "^9.3.3",

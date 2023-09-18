@@ -1,7 +1,7 @@
+import { useLocalStorage } from '@guoyunhe/react-storage';
 import { FormControlLabel, Stack, Switch } from '@mui/material';
 import { CSSProperties, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import useLocalStorage from 'use-local-storage';
 import Editor from '../../components/editor';
 import jsonToType from './jsonToType';
 

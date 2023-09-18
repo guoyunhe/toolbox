@@ -1,10 +1,9 @@
-import { Box, LinearProgress, Paper, SxProps } from '@mui/material';
+import { Box, LinearProgress, Paper, SxProps, useTheme } from '@mui/material';
 import Highlight, { Language, defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/vsDark';
 import lightTheme from 'prism-react-renderer/themes/vsLight';
 import { Fragment, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
-import useColorMode from '../../hooks/useColorMode';
 
 export interface EditorProps {
   code: string;
@@ -16,7 +15,7 @@ export interface EditorProps {
 }
 
 export default function Editor({ code, onChange, disabled, loading, language, sx }: EditorProps) {
-  const { colorMode } = useColorMode();
+  const theme = useTheme();
   const editorRef = useRef(null);
 
   const onEditableChange = useCallback(
@@ -52,7 +51,7 @@ export default function Editor({ code, onChange, disabled, loading, language, sx
         {...defaultProps}
         code={code}
         language={language}
-        theme={colorMode === 'dark' ? darkTheme : lightTheme}
+        theme={theme.palette.mode === 'dark' ? darkTheme : lightTheme}
       >
         {({ className, style, tokens, getTokenProps }) => (
           <Box

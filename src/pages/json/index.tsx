@@ -5,7 +5,7 @@ import Editor from '../../components/editor';
 import TreeView from './TreeView';
 import TypeView from './TypeView';
 
-import useLocalStorage from 'use-local-storage';
+import { useLocalStorage } from '@guoyunhe/react-storage';
 import placeholder from './placeholder.jsonc?raw';
 import jsonDeepParse from './utils/jsonDeepParse';
 import jsonShallowParse from './utils/jsonShallowParse';
