@@ -5,6 +5,7 @@ import lightTheme from 'prism-react-renderer/themes/vsLight';
 import { Fragment, ReactNode, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
 import jsonLogo from '../../images/json-logo.svg';
+import reactLogo from '../../images/react-logo.svg';
 import svgLogo from '../../images/svg-logo.svg';
 import DownloadButton from '../download-button';
 import UploadButton from '../upload-button';
@@ -17,6 +18,10 @@ const languageMap: Record<string, { language: Language; logo: string }> = {
   json: {
     language: 'json',
     logo: jsonLogo,
+  },
+  jsx: {
+    language: 'jsx',
+    logo: reactLogo,
   },
 };
 
@@ -71,7 +76,17 @@ export default function Editor({
         overflow: 'hidden',
       }}
     >
-      <Toolbar variant="dense" disableGutters sx={{ px: 1, py: 0 }}>
+      <Toolbar
+        variant="dense"
+        disableGutters
+        sx={{
+          px: 1,
+          py: 0,
+          borderBottomWidth: 1,
+          borderBottomStyle: 'solid',
+          borderBottomColor: theme.palette.divider,
+        }}
+      >
         <Box component="img" src={languageMap[language]?.logo} sx={{ width: 24, height: 24 }} />
         <Box sx={{ ml: 1 }}>{title || language.toUpperCase()}</Box>
         <Box sx={{ flex: '1 1 auto' }} />
