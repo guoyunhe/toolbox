@@ -1,4 +1,4 @@
-import { Box, LinearProgress, Paper, SxProps, Toolbar, useTheme } from '@mui/material';
+import { Box, LinearProgress, SxProps, Toolbar, useTheme } from '@mui/material';
 import { Highlight, Language } from 'prism-react-renderer';
 import { Fragment, ReactNode, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
@@ -49,8 +49,7 @@ export default function Editor({
   });
 
   return (
-    <Paper
-      variant="outlined"
+    <Box
       sx={{
         ...sx,
         position: 'relative',
@@ -123,6 +122,6 @@ export default function Editor({
           </Box>
         )}
       </Highlight>
-    </Paper>
+    </Box>
   );
 }
