@@ -1,11 +1,11 @@
 import { Box, LinearProgress, Paper, SxProps, Toolbar, useTheme } from '@mui/material';
-import { Highlight } from 'prism-react-renderer';
+import { Highlight, Language } from 'prism-react-renderer';
 import { Fragment, ReactNode, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
 import DownloadButton from '../download-button';
 import UploadButton from '../upload-button';
 
-const languageMap: Record<string, string> = {
+const languageMap: Record<string, Language> = {
   html: 'markup',
   svg: 'markup',
 };

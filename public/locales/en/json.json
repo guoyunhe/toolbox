@@ -1,8 +1,9 @@
 {
   "Input": "Input",
   "Deep parse": "Deep parse",
-  "Tree": "Tree",
+  "Output": "Output",
   "Sort properties": "Sort properties",
+  "Tree": "Tree",
   "Make all properties optional": "Make all properties optional",
   "ENUMs to unions": "ENUMs to unions"
 }

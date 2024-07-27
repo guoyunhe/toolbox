@@ -1,10 +1,13 @@
 import { ArrowRight } from '@mui/icons-material';
 import { Avatar, Drawer, List, ListItemText, ListSubheader } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import jsonLogo from '../../images/json-logo.svg';
 import svgLogo from '../../images/svg-logo.svg';
 import NavListItemButton from './NavListItemButton';
 
 export default function Sidebar() {
+  const { t } = useTranslation();
+
   return (
     <Drawer
       variant="permanent"
@@ -26,6 +29,8 @@ export default function Sidebar() {
           </ListSubheader>
         }
       >
+        <NavListItemButton to="/json-tree">{t('JSON tree')}</NavListItemButton>
+        <NavListItemButton to="/json-format">{t('JSON format')}</NavListItemButton>
         <NavListItemButton to="/json">
           JSON <ArrowRight /> Object
         </NavListItemButton>

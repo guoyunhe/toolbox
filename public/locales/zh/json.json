@@ -1,8 +1,9 @@
 {
   "Input": "输入",
   "Deep parse": "深度解析",
-  "Tree": "树状图",
+  "Output": "输出",
   "Sort properties": "排序属性",
+  "Tree": "树状图",
   "Make all properties optional": "所有属性可选",
   "ENUMs to unions": "ENUM 转 Union"
 }

@@ -4,6 +4,8 @@ import AppLayout from './layouts/app';
 
 // 1451kB, 需要优化
 const JsonPage = lazy(() => import('./pages/json'));
+const JsonFormatPage = lazy(() => import('./pages/json-format'));
+const JsonTreePage = lazy(() => import('./pages/json-tree'));
 const XmlPage = lazy(() => import('./pages/xml'));
 const ColorPage = lazy(() => import('./pages/color'));
 // 637kB, 需要优化
@@ -17,6 +19,14 @@ const routes: RouteObject[] = [
     path: '/',
     element: <AppLayout />,
     children: [
+      {
+        path: 'json-format',
+        element: <JsonFormatPage />,
+      },
+      {
+        path: 'json-tree',
+        element: <JsonTreePage />,
+      },
       {
         path: 'json',
         element: <JsonPage />,
