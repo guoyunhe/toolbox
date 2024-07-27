@@ -3,12 +3,16 @@ import { Box, FormControlLabel, Stack, Switch } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Editor from '~/components/editor';
+import useJsonParse from '~/hooks/use-json-parse';
 import placeholder from './placeholder.jsonc?raw';
 
 export default function JsonFormatPage() {
   const { t } = useTranslation('json');
   const [code, setCode] = useState(placeholder);
   const [deepParse, setDeepParse] = useLocalStorage('json_deep_parse', true);
+  const [sortKeys, setSortKeys] = useLocalStorage('json_sort_keys', true);
+  const data = useJsonParse({ code, deepParse, sortKeys });
+  const output = JSON.stringify(data, null, 2);
 
   return (
     <Box sx={{ flex: '1 1 auto', display: 'flex', overflow: 'hidden' }}>
@@ -33,15 +37,15 @@ export default function JsonFormatPage() {
       <Box sx={{ flex: '1 1 50%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <Editor
           title={t('Output')}
-          value={code}
-          onChange={setCode}
+          value={output}
+          disabled
           language="js"
           sx={{ flex: '1 1 auto' }}
         />
         <Stack direction="row">
           <FormControlLabel
             control={
-              <Switch checked={deepParse} onChange={(e, v) => setDeepParse(v)} sx={{ ml: 1 }} />
+              <Switch checked={sortKeys} onChange={(e, v) => setSortKeys(v)} sx={{ ml: 1 }} />
             }
             label={t('Sort properties')}
           />
