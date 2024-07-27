@@ -2,7 +2,7 @@ import { useLocalStorage } from '@guoyunhe/react-storage';
 import { Box, FormControlLabel, Stack, Switch } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Editor from '../../components/editor';
+import Editor from '~/components/editor';
 import placeholder from './placeholder.jsonc?raw';
 
 export default function JsonFormatPage() {

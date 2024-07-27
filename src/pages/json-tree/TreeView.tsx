@@ -1,5 +1,5 @@
 import { useLocalStorage } from '@guoyunhe/react-storage';
-import { FormControlLabel, Stack, Switch, useTheme } from '@mui/material';
+import { FormControlLabel, Stack, Switch, Toolbar, useTheme } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { JSONTree } from 'react-json-tree';
 
@@ -30,20 +30,20 @@ const lightTheme = {
 };
 
 const darkTheme = {
-  base00: '#011627', // background
+  base00: '#1e1e1e', // background
   base01: '#383830',
   base02: '#49483e',
-  base03: '#637777', // object/array desc
+  base03: 'rgb(106, 153, 85)', // object/array desc expanded
   base04: '#a59f85',
   base05: '#f8f8f2',
   base06: '#f5f4f1',
   base07: '#f9f8f5',
-  base08: '#7fdbca', // null
-  base09: '#f78c6c', // number, boolean
+  base08: 'rgb(86, 156, 214)', // null
+  base09: 'rgb(181, 206, 168)', // number, boolean
   base0A: '#f4bf75',
-  base0B: '#addb67', // string
+  base0B: 'rgb(206, 145, 120)', // string
   base0C: '#a1efe4',
-  base0D: '#80cbc4', // key
+  base0D: '#9cdcfe', // key
   base0E: '#ae81ff',
   base0F: '#cc6633',
   tree: {
@@ -51,7 +51,7 @@ const darkTheme = {
     flex: '1 1 auto',
     overflow: 'auto',
     fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace',
-    fontSize: 14,
+    fontSize: 12,
   },
 };
 
@@ -66,6 +66,19 @@ export default function TreeView({ data }: TreeViewProps) {
 
   return (
     <>
+      <Toolbar
+        variant="dense"
+        disableGutters
+        sx={{
+          px: 1,
+          py: 0,
+          borderBottomWidth: 1,
+          borderBottomStyle: 'solid',
+          borderBottomColor: theme.palette.divider,
+        }}
+      >
+        {t('Output')}
+      </Toolbar>
       <JSONTree
         data={data}
         theme={theme.palette.mode === 'light' ? lightTheme : darkTheme}
