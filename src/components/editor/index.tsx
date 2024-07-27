@@ -1,42 +1,13 @@
 import { Box, LinearProgress, Paper, SxProps, Toolbar, useTheme } from '@mui/material';
-import Highlight, { Language, defaultProps } from 'prism-react-renderer';
-import darkTheme from 'prism-react-renderer/themes/vsDark';
-import lightTheme from 'prism-react-renderer/themes/vsLight';
+import { Highlight } from 'prism-react-renderer';
 import { Fragment, ReactNode, useCallback, useRef } from 'react';
 import { useEditable } from 'use-editable';
-import cssLogo from '../../images/css-logo.svg';
-import htmlLogo from '../../images/html-logo.svg';
-import jsonLogo from '../../images/json-logo.svg';
-import reactLogo from '../../images/react-logo.svg';
-import svgLogo from '../../images/svg-logo.svg';
 import DownloadButton from '../download-button';
 import UploadButton from '../upload-button';
 
-const languageMap: Record<string, { language: Language; logo: string }> = {
-  css: {
-    language: 'css',
-    logo: cssLogo,
-  },
-  html: {
-    language: 'markup',
-    logo: htmlLogo,
-  },
-  json: {
-    language: 'json',
-    logo: jsonLogo,
-  },
-  jsx: {
-    language: 'jsx',
-    logo: reactLogo,
-  },
-  svg: {
-    language: 'markup',
-    logo: svgLogo,
-  },
-  tsx: {
-    language: 'tsx',
-    logo: reactLogo,
-  },
+const languageMap: Record<string, string> = {
+  html: 'markup',
+  svg: 'markup',
 };
 
 export interface EditorProps {
@@ -101,7 +72,6 @@ export default function Editor({
           borderBottomColor: theme.palette.divider,
         }}
       >
-        <Box component="img" src={languageMap[language]?.logo} sx={{ width: 24, height: 24 }} />
         <Box sx={{ ml: 1 }}>{title || language.toUpperCase()}</Box>
         <Box sx={{ flex: '1 1 auto' }} />
         {download && (
@@ -117,12 +87,7 @@ export default function Editor({
           sx={{ position: 'absolute', left: 4, top: 4, right: 4, borderRadius: 2, zIndex: 19 }}
         />
       )}
-      <Highlight
-        {...defaultProps}
-        code={code}
-        language={languageMap[language]?.language}
-        theme={theme.palette.mode === 'dark' ? darkTheme : lightTheme}
-      >
+      <Highlight code={code} language={languageMap[language] || language}>
         {({ className, style, tokens, getTokenProps }) => (
           <Box
             component="pre"
