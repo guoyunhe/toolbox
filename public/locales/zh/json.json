@@ -4,5 +4,6 @@
   "Output": "输出",
   "Sort properties": "排序属性",
   "Make all properties optional": "所有属性可选",
-  "ENUMs to unions": "ENUM 转 Union"
+  "ENUMs to unions": "ENUM 转 Union",
+  "Infer date/time": "推断日期/时间类型"
 }
