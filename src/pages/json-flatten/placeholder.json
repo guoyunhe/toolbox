@@ -1,4 +1,3 @@
-// comment is supported!
 {
   "id": 102,
   "name": "Mi 13 Ultra",
@@ -11,13 +10,13 @@
       "id": 897,
       "userId": 123,
       "rating": 9,
-      "content": "Good",
+      "content": "Good"
     },
     {
       "id": 426,
       "userId": 75,
       "rating": 8,
-      "content": "Not bad",
-    },
-  ],
+      "content": "Not bad"
+    }
+  ]
 }

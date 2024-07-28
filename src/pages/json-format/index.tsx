@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Editor from '~/components/editor';
 import useJsonParse from '~/hooks/use-json-parse';
-import placeholder from './placeholder.jsonc?raw';
+import placeholder from './placeholder.json?raw';
 
 export default function JsonFormatPage() {
   const { t } = useTranslation('json');
