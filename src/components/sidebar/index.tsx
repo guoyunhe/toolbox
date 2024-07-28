@@ -31,9 +31,7 @@ export default function Sidebar() {
       >
         <NavListItemButton to="/json-tree">{t('JSON tree')}</NavListItemButton>
         <NavListItemButton to="/json-format">{t('JSON format')}</NavListItemButton>
-        <NavListItemButton to="/json">
-          JSON <ArrowRight /> Object
-        </NavListItemButton>
+        <NavListItemButton to="/json-to-type">{t('JSON to TS type')}</NavListItemButton>
         <NavListItemButton to="/json">
           JSON <ArrowRight /> CSS
         </NavListItemButton>

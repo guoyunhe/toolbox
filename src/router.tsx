@@ -3,7 +3,7 @@ import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/app';
 
 // 1451kB, 需要优化
-const JsonPage = lazy(() => import('./pages/json'));
+const JsonToTypePage = lazy(() => import('./pages/json-to-type'));
 const JsonFormatPage = lazy(() => import('./pages/json-format'));
 const JsonTreePage = lazy(() => import('./pages/json-tree'));
 const XmlPage = lazy(() => import('./pages/xml'));
@@ -28,8 +28,8 @@ const routes: RouteObject[] = [
         element: <JsonTreePage />,
       },
       {
-        path: 'json',
-        element: <JsonPage />,
+        path: 'json-to-type',
+        element: <JsonToTypePage />,
       },
       {
         path: 'xml',
