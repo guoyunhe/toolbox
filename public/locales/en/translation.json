@@ -10,6 +10,8 @@
   "JSON tree": "JSON tree",
   "JSON format": "JSON format",
   "JSON to TS type": "JSON to TS type",
+  "JSON flatten": "JSON flatten",
+  "JSON unflatten": "JSON unflatten",
   "Upload": "Upload",
   "Color": "Color",
   "Support name, hex, rgba, hsl, cmyk": "Support name, hex, rgba, hsl, cmyk",

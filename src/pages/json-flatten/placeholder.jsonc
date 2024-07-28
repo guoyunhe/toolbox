@@ -1,0 +1,23 @@
+// comment is supported!
+{
+  "id": 102,
+  "name": "Mi 13 Ultra",
+  "metadata": "{\"RAM\":\"12GB\",\"Storage\":\"12GB\",\"Color\":\"Green\"}",
+  "stock": 68,
+  "price": 699.99,
+  "featured": true,
+  "reviews": [
+    {
+      "id": 897,
+      "userId": 123,
+      "rating": 9,
+      "content": "Good",
+    },
+    {
+      "id": 426,
+      "userId": 75,
+      "rating": 8,
+      "content": "Not bad",
+    },
+  ],
+}

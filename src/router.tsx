@@ -2,10 +2,12 @@ import { lazy } from 'react';
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/app';
 
-// 1451kB, 需要优化
-const JsonToTypePage = lazy(() => import('./pages/json-to-type'));
 const JsonFormatPage = lazy(() => import('./pages/json-format'));
 const JsonTreePage = lazy(() => import('./pages/json-tree'));
+const JsonToTypePage = lazy(() => import('./pages/json-to-type'));
+const JsonFlattenPage = lazy(() => import('./pages/json-flatten'));
+const JsonUnflattenPage = lazy(() => import('./pages/json-unflatten'));
+
 const XmlPage = lazy(() => import('./pages/xml'));
 const ColorPage = lazy(() => import('./pages/color'));
 // 637kB, 需要优化
@@ -30,6 +32,14 @@ const routes: RouteObject[] = [
       {
         path: 'json-to-type',
         element: <JsonToTypePage />,
+      },
+      {
+        path: 'json-flatten',
+        element: <JsonFlattenPage />,
+      },
+      {
+        path: 'json-unflatten',
+        element: <JsonUnflattenPage />,
       },
       {
         path: 'xml',

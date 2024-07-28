@@ -1,0 +1,16 @@
+{
+  "id": 102,
+  "name": "Mi 13 Ultra",
+  "metadata": "{\"RAM\":\"12GB\",\"Storage\":\"12GB\",\"Color\":\"Green\"}",
+  "stock": 68,
+  "price": 699.99,
+  "featured": true,
+  "reviews.0.id": 897,
+  "reviews.0.userId": 123,
+  "reviews.0.rating": 9,
+  "reviews.0.content": "Good",
+  "reviews.1.id": 426,
+  "reviews.1.userId": 75,
+  "reviews.1.rating": 8,
+  "reviews.1.content": "Not bad"
+}
