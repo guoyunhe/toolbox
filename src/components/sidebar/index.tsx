@@ -1,4 +1,3 @@
-import { ArrowRight } from '@mui/icons-material';
 import { Avatar, Drawer, List, ListItemText, ListSubheader } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import jsonLogo from '../../images/json-logo.svg';
@@ -32,12 +31,6 @@ export default function Sidebar() {
         <NavListItemButton to="/json-tree">{t('JSON tree')}</NavListItemButton>
         <NavListItemButton to="/json-format">{t('JSON format')}</NavListItemButton>
         <NavListItemButton to="/json-to-type">{t('JSON to TS type')}</NavListItemButton>
-        <NavListItemButton to="/json">
-          JSON <ArrowRight /> CSS
-        </NavListItemButton>
-        <NavListItemButton to="/json">
-          JSON <ArrowRight /> TypeScript Type
-        </NavListItemButton>
       </List>
       <List
         subheader={
