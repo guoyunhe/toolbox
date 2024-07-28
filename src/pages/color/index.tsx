@@ -18,9 +18,9 @@ export default function ColorPage() {
   const name = useMemo(
     () =>
       Object.keys(colors).find(
-        (key) => (colors as any)[key]?.join() === color?.rgb().array().join()
+        (key) => (colors as any)[key]?.join() === color?.rgb().array().join(),
       ),
-    [color]
+    [color],
   );
   return (
     <Box>

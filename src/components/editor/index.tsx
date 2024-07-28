@@ -23,7 +23,7 @@ export interface EditorProps {
 }
 
 export default function Editor({
-  value: code,
+  value,
   onChange,
   disabled,
   loading,
@@ -75,18 +75,18 @@ export default function Editor({
         <Box sx={{ flex: '1 1 auto' }} />
         {download && (
           <DownloadButton
-            data={code}
-            filename={typeof download === 'string' ? download : 'code.' + language}
+            data={value}
+            filename={typeof download === 'string' ? download : `code.${language}`}
           />
         )}
-        {upload && <UploadButton value={code} onUpload={onChange} />}
+        {upload && <UploadButton value={value} onUpload={onChange} />}
       </Toolbar>
       {loading && (
         <LinearProgress
           sx={{ position: 'absolute', left: 4, top: 4, right: 4, borderRadius: 2, zIndex: 19 }}
         />
       )}
-      <Highlight code={code} language={languageMap[language] || language}>
+      <Highlight code={value} language={languageMap[language] || language}>
         {({ className, style, tokens, getTokenProps }) => (
           <Box
             component="pre"

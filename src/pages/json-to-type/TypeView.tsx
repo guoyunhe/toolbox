@@ -16,7 +16,10 @@ export default function TypeView({ data, style }: TypeViewProps) {
   const [sortKeys, setSortKeys] = useLocalStorage('json_to_type_alphabetize_properties', false);
   const [optional, setOptional] = useLocalStorage('json_to_type_all_properties_optional', false);
   const [preferUnions, setPreferUnions] = useLocalStorage('json_to_type_prefer_unions', false);
-  const [inferDateTimes, setInferDateTimes] = useLocalStorage('json_to_type_infer_date_times', false);
+  const [inferDateTimes, setInferDateTimes] = useLocalStorage(
+    'json_to_type_infer_date_times',
+    false,
+  );
 
   const [code, setCode] = useState('');
 
@@ -31,7 +34,7 @@ export default function TypeView({ data, style }: TypeViewProps) {
       indentation: '  ',
       rendererOptions: {
         'just-types': true,
-        'prefer-unions': preferUnions
+        'prefer-unions': preferUnions,
       },
     }).then(({ lines }) => {
       setCode(lines.join('\n'));

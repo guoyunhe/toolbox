@@ -12,7 +12,7 @@ export default function DownloadButton({ data, filename, ...props }: DownloadBut
   const { t } = useTranslation();
   const handleClick = () => {
     const pom = document.createElement('a');
-    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+    pom.setAttribute('href', `data:text/plain;charset=utf-8,${encodeURIComponent(data)}`);
     pom.setAttribute('download', filename);
     pom.click();
   };

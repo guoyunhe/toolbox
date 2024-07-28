@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import useJsonParse from '~/hooks/use-json-parse';
 import Editor from '../../components/editor';
 import TreeView from './TreeView';
-import placeholder from './placeholder.jsonc?raw';
+import placeholder from './placeholder.json?raw';
 
 export default function JsonPage() {
   const { t } = useTranslation('json');

@@ -6,7 +6,7 @@ import { join } from 'path';
 import { languageCodes } from '../src/config/i18n.js';
 
 const localeRoot = 'public/locales';
-const sourceDir = localeRoot + '/en';
+const sourceDir = `${localeRoot}/en`;
 
 (async () => {
   const sourceFiles = await glob('*.json', { cwd: sourceDir });
