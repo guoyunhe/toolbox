@@ -1,8 +1,8 @@
 import { useSessionStorage } from '@guoyunhe/react-storage';
 import { Box } from '@mui/material';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import xior from 'xior';
 import Editor from '../../components/editor';
 import defaultSvg from '../../data/default-svg.svg?raw';
 
@@ -15,7 +15,7 @@ export default function SvgToReactPage() {
   useEffect(() => {
     if (svgCode.trim()) {
       setLoading(true);
-      axios
+      xior
         .post('https://api.react-svgr.com/api/svgr', {
           code: svgCode,
           options: {

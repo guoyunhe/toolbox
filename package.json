@@ -58,7 +58,6 @@
     "@mui/icons-material": "^5.16.5",
     "@mui/lab": "5.0.0-alpha.170",
     "@mui/material": "^5.16.5",
-    "axios": "^1.7.2",
     "color": "^4.2.3",
     "color-name": "^2.0.0",
     "flat": "^6.0.1",
@@ -79,7 +78,8 @@
     "react-router-dom": "^6.25.1",
     "sort-keys": "^5.0.0",
     "svgo": "^3.3.2",
-    "use-editable": "^2.3.3"
+    "use-editable": "^2.3.3",
+    "xior": "^0.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -96,7 +96,6 @@
     "@typescript-eslint/parser": "^7.17.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "@vitest/ui": "^2.0.4",
-    "axios-mock-adapter": "^1.22.0",
     "bing-translate-api": "^4.0.2",
     "commitlint-config-ali": "^1.1.0",
     "eslint": "^8.57.0",
