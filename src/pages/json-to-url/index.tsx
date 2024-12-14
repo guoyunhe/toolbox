@@ -1,3 +1,4 @@
+import { useLocalStorage } from '@guoyunhe/react-storage';
 import { Box, FormControlLabel, Switch } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +12,7 @@ export default function JsonToUrlPage() {
   const { t } = useTranslation();
   const [input, setInput] = useState(placeholder);
 
-  const [deepParse, setDeepParse] = useState(true);
+  const [deepParse, setDeepParse] = useLocalStorage('json_to_url_deep_parse', true);
 
   const output = useMemo(() => {
     const data: any = deepParse ? jsonDeepParse(input) : jsonShallowParse(input);

@@ -49,15 +49,11 @@ export default function JsonPage() {
       settings={
         <Stack direction="row">
           <FormControlLabel
-            control={
-              <Switch checked={deepParse} onChange={(e, v) => setDeepParse(v)} sx={{ ml: 1 }} />
-            }
+            control={<Switch checked={deepParse} onChange={(e, v) => setDeepParse(v)} />}
             label={t('Deep parse')}
           />
           <FormControlLabel
-            control={
-              <Switch checked={sortKeys} onChange={(e, v) => setSortKeys(v)} sx={{ ml: 1 }} />
-            }
+            control={<Switch checked={sortKeys} onChange={(e, v) => setSortKeys(v)} />}
             label={t('Sort properties')}
           />
           <FormControlLabel
