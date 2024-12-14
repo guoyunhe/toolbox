@@ -10,13 +10,15 @@
       "id": 897,
       "userId": 123,
       "rating": 9,
-      "content": "Good"
+      "content": "Good",
+      "publishedAt": "2024-12-14T14:48:49.802Z"
     },
     {
       "id": 426,
       "userId": 75,
       "rating": 8,
-      "content": "Not bad"
+      "content": "Not bad",
+      "publishedAt": "2024-12-14T14:48:49.802Z"
     }
   ]
 }

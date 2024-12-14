@@ -18,12 +18,12 @@
   "Support name, hex, rgba, hsl, cmyk": "支持名称，十六进制，rgba，hsl，cmyk",
   "Invalid color!": "颜色无效！",
   "Input": "输入",
-  "Deep parse": "",
+  "Deep parse": "深度解析",
   "Output": "输出",
   "Sort properties": "排序属性",
-  "Make all properties optional": "",
-  "ENUMs to unions": "",
-  "Infer date/time": "",
+  "Make all properties optional": "全部属性可选",
+  "ENUMs to unions": "枚举转联合类型",
+  "Infer date/time": "推断 Date 类型",
   "Minfied SVG": "压缩的 SVG",
   "React component": "React 组件"
 }
