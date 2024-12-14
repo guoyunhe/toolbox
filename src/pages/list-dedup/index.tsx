@@ -19,7 +19,7 @@ export default function ListDedupPage() {
   );
 
   return (
-    <ToolPage title={t('URL ➡️ JSON')}>
+    <ToolPage title={t('List Dedup')}>
       <Box sx={{ flex: '1 1 auto', display: 'flex', gap: 1, overflow: 'hidden' }}>
         <Editor
           title={t('Input')}

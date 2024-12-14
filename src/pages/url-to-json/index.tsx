@@ -24,7 +24,7 @@ export default function UrlToJsonPage() {
 
   return (
     <ToolPage
-      title={t('URL ➡️ JSON')}
+      title="URL ➡️ JSON"
       settings={
         <Box>
           <FormControlLabel
