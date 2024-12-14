@@ -34,6 +34,13 @@ export default function Sidebar() {
         <NavListItemButton to="/json-flatten">{t('JSON flatten')}</NavListItemButton>
         <NavListItemButton to="/json-unflatten">{t('JSON unflatten')}</NavListItemButton>
       </List>
+      <List subheader={<ListSubheader>URL</ListSubheader>}>
+        <NavListItemButton to="/url-to-json">URL ➡️ JSON</NavListItemButton>
+        <NavListItemButton to="/json-format">{t('JSON format')}</NavListItemButton>
+        <NavListItemButton to="/json-to-type">{t('JSON to TS type')}</NavListItemButton>
+        <NavListItemButton to="/json-flatten">{t('JSON flatten')}</NavListItemButton>
+        <NavListItemButton to="/json-unflatten">{t('JSON unflatten')}</NavListItemButton>
+      </List>
       <List
         subheader={
           <ListSubheader>

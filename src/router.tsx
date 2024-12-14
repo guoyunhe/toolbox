@@ -16,6 +16,8 @@ const SvgToCssPage = lazy(() => import('./pages/svg-to-css'));
 const SvgToUrlPage = lazy(() => import('./pages/svg-to-url'));
 const SvgToReactPage = lazy(() => import('./pages/svg-to-react'));
 
+const UrlToJsonPage = lazy(() => import('./pages/url-to-json'));
+
 const routes: RouteObject[] = [
   {
     path: '/',
@@ -40,6 +42,10 @@ const routes: RouteObject[] = [
       {
         path: 'json-unflatten',
         element: <JsonUnflattenPage />,
+      },
+      {
+        path: 'url-to-json',
+        element: <UrlToJsonPage />,
       },
       {
         path: 'xml',

@@ -69,6 +69,7 @@
     "json5": "^2.2.3",
     "mui-material-compact": "^1.8.0",
     "mui-palette-mode": "^1.2.0",
+    "p-retry": "^6.2.1",
     "pretty-bytes": "^6.1.1",
     "prism-react-renderer": "^2.4.0",
     "quicktype-core": "^23.0.170",
