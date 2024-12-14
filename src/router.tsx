@@ -1,3 +1,4 @@
+import pRetry from 'p-retry';
 import { lazy } from 'react';
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/app';
@@ -8,6 +9,8 @@ const JsonToTypePage = lazy(() => import('./pages/json-to-type'));
 const JsonFlattenPage = lazy(() => import('./pages/json-flatten'));
 const JsonUnflattenPage = lazy(() => import('./pages/json-unflatten'));
 const JsonToUrlPage = lazy(() => import('./pages/json-to-url'));
+
+const ListDedupPage = lazy(() => pRetry(() => import('./pages/list-dedup')));
 
 const XmlPage = lazy(() => import('./pages/xml'));
 const ColorPage = lazy(() => import('./pages/color'));
@@ -47,6 +50,10 @@ const routes: RouteObject[] = [
       {
         path: 'json-to-url',
         element: <JsonToUrlPage />,
+      },
+      {
+        path: 'list-dedup',
+        element: <ListDedupPage />,
       },
       {
         path: 'url-to-json',

@@ -39,6 +39,9 @@ export default function Sidebar() {
         <NavListItemButton to="/url-to-json">URL ➡️ JSON</NavListItemButton>
         <NavListItemButton to="/json-to-url">JSON ➡️ URL</NavListItemButton>
       </List>
+      <List subheader={<ListSubheader>{t('List')}</ListSubheader>}>
+        <NavListItemButton to="/list-dedup">{t('List Dedup')}</NavListItemButton>
+      </List>
       <List
         subheader={
           <ListSubheader>

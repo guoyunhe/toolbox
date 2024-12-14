@@ -8,6 +8,7 @@ import placeholder from './placeholder.txt?raw';
 
 export default function UrlToJsonPage() {
   const { t } = useTranslation('json');
+
   const [input, setInput] = useState(placeholder);
 
   const [deepParse, setDeepParse] = useState(true);
@@ -35,21 +36,20 @@ export default function UrlToJsonPage() {
         </Box>
       }
     >
-      <Box sx={{ flex: '1 1 auto', display: 'flex', overflow: 'hidden' }}>
+      <Box sx={{ flex: '1 1 100%', display: 'flex', overflow: 'hidden', gap: 10 }}>
         <Editor
           title={t('Input')}
           value={input}
           onChange={setInput}
           language="txt"
-          sx={{ flex: '1 1 auto' }}
+          sx={{ flex: '1 1 50%' }}
         />
-        <Box width={10} />
         <Editor
           title={t('Output')}
           value={output}
           disabled
           language="js"
-          sx={{ flex: '1 1 auto' }}
+          sx={{ flex: '1 1 50%' }}
         />
       </Box>
     </ToolPage>

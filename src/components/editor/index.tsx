@@ -35,13 +35,11 @@ export default function Editor({
 }: EditorProps) {
   const theme = useTheme();
   const editorRef = useRef(null);
+  const onChangeRef = useRef(onChange);
 
-  const onEditableChange = useCallback(
-    (code: string) => {
-      onChange?.(code.slice(0, -1)); // fix line break issues
-    },
-    [onChange],
-  );
+  const onEditableChange = useCallback((code: string) => {
+    onChangeRef.current?.(code.slice(0, -1)); // fix line break issues
+  }, []);
 
   useEditable(editorRef, onEditableChange, {
     disabled,
