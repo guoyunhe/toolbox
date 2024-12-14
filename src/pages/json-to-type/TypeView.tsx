@@ -11,7 +11,7 @@ export interface TypeViewProps {
 }
 
 export default function TypeView({ data, style }: TypeViewProps) {
-  const { t } = useTranslation('json');
+  const { t } = useTranslation();
 
   const [sortKeys, setSortKeys] = useLocalStorage('json_to_type_alphabetize_properties', false);
   const [optional, setOptional] = useLocalStorage('json_to_type_all_properties_optional', false);

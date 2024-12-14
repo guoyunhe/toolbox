@@ -6,7 +6,7 @@ import ToolPage from '~/components/tool-page';
 import placeholder from './placeholder.txt?raw';
 
 export default function ListDedupPage() {
-  const { t } = useTranslation('json');
+  const { t } = useTranslation();
   const [input, setInput] = useState(placeholder);
 
   const output = useMemo(
@@ -19,7 +19,7 @@ export default function ListDedupPage() {
   );
 
   return (
-    <ToolPage title={t('List Dedup')}>
+    <ToolPage title={t('List dedup')}>
       <Box sx={{ flex: '1 1 auto', display: 'flex', gap: 1, overflow: 'hidden' }}>
         <Editor
           title={t('Input')}

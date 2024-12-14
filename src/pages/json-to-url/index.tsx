@@ -8,7 +8,7 @@ import jsonShallowParse from '~/utils/jsonShallowParse';
 import placeholder from './placeholder.json?raw';
 
 export default function JsonToUrlPage() {
-  const { t } = useTranslation('json');
+  const { t } = useTranslation();
   const [input, setInput] = useState(placeholder);
 
   const [deepParse, setDeepParse] = useState(true);
@@ -31,7 +31,7 @@ export default function JsonToUrlPage() {
             control={
               <Switch checked={deepParse} onChange={(e) => setDeepParse(e.target.checked)} />
             }
-            label={t('Deep Parse')}
+            label={t('Deep parse')}
           />
         </Box>
       }

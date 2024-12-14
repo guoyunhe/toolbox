@@ -5,5 +5,7 @@
   "Sort properties": "Sort properties",
   "Make all properties optional": "Make all properties optional",
   "ENUMs to unions": "ENUMs to unions",
-  "Infer date/time": "Infer date/time"
+  "Infer date/time": "Infer date/time",
+  "Deep parse": "Deep parse",
+  "List dedup": "List dedup"
 }

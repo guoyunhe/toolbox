@@ -8,7 +8,7 @@ import TypeView from './TypeView';
 import placeholder from './placeholder.json?raw';
 
 export default function JsonPage() {
-  const { t } = useTranslation('json');
+  const { t } = useTranslation();
   const [code, setCode] = useState(placeholder);
   const [deepParse, setDeepParse] = useLocalStorage('json_deep_parse', true);
   const data = useJsonParse({ code, deepParse });

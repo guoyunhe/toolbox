@@ -8,7 +8,7 @@ import useJsonParse from '~/hooks/use-json-parse';
 import placeholder from './placeholder.json?raw';
 
 export default function JsonFlattenPage() {
-  const { t } = useTranslation('json');
+  const { t } = useTranslation();
   const [code, setCode] = useState(placeholder);
   const [deepParse, setDeepParse] = useLocalStorage('json_deep_parse', true);
   const [sortKeys, setSortKeys] = useLocalStorage('json_sort_keys', true);

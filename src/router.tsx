@@ -4,7 +4,6 @@ import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/app';
 
 const JsonFormatPage = lazy(() => pRetry(() => import('./pages/json-format')));
-const JsonTreePage = lazy(() => pRetry(() => import('./pages/json-tree')));
 const JsonToTypePage = lazy(() => pRetry(() => import('./pages/json-to-type')));
 const JsonFlattenPage = lazy(() => pRetry(() => import('./pages/json-flatten')));
 const JsonUnflattenPage = lazy(() => pRetry(() => import('./pages/json-unflatten')));
@@ -30,10 +29,6 @@ const routes: RouteObject[] = [
       {
         path: 'json-format',
         element: <JsonFormatPage />,
-      },
-      {
-        path: 'json-tree',
-        element: <JsonTreePage />,
       },
       {
         path: 'json-to-type',
