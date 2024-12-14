@@ -36,7 +36,7 @@ export default function UrlToJsonPage() {
         </Box>
       }
     >
-      <Box sx={{ flex: '1 1 100%', display: 'flex', overflow: 'hidden', gap: 10 }}>
+      <Box sx={{ flex: '1 1 100%', display: 'flex', overflow: 'hidden', gap: 1 }}>
         <Editor
           title={t('Input')}
           value={input}

@@ -36,21 +36,20 @@ export default function JsonToUrlPage() {
         </Box>
       }
     >
-      <Box sx={{ flex: '1 1 auto', display: 'flex', overflow: 'hidden' }}>
+      <Box sx={{ flex: '1 1 auto', display: 'flex', overflow: 'hidden', gap: 1 }}>
         <Editor
           title={t('Input')}
           value={input}
           onChange={setInput}
           language="js"
-          sx={{ flex: '1 1 auto' }}
+          sx={{ flex: '1 1 50%' }}
         />
-        <Box width={10} />
         <Editor
           title={t('Output')}
           value={output}
           disabled
           language="txt"
-          sx={{ flex: '1 1 auto' }}
+          sx={{ flex: '1 1 50%' }}
         />
       </Box>
     </ToolPage>
