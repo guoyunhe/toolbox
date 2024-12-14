@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import sortKeysFunc from 'sort-keys';
-import jsonDeepParse from './jsonDeepParse';
-import jsonShallowParse from './jsonShallowParse';
+import jsonDeepParse from '~/utils/jsonDeepParse';
+import jsonShallowParse from '~/utils/jsonShallowParse';
 
 interface UseJsonParseOptions {
   code: string;
