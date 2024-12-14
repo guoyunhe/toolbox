@@ -7,6 +7,7 @@ const JsonTreePage = lazy(() => import('./pages/json-tree'));
 const JsonToTypePage = lazy(() => import('./pages/json-to-type'));
 const JsonFlattenPage = lazy(() => import('./pages/json-flatten'));
 const JsonUnflattenPage = lazy(() => import('./pages/json-unflatten'));
+const JsonToUrlPage = lazy(() => import('./pages/json-to-url'));
 
 const XmlPage = lazy(() => import('./pages/xml'));
 const ColorPage = lazy(() => import('./pages/color'));
@@ -42,6 +43,10 @@ const routes: RouteObject[] = [
       {
         path: 'json-unflatten',
         element: <JsonUnflattenPage />,
+      },
+      {
+        path: 'json-to-url',
+        element: <JsonToUrlPage />,
       },
       {
         path: 'url-to-json',
