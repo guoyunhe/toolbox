@@ -3,24 +3,24 @@ import { lazy } from 'react';
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/app';
 
-const JsonFormatPage = lazy(() => import('./pages/json-format'));
-const JsonTreePage = lazy(() => import('./pages/json-tree'));
-const JsonToTypePage = lazy(() => import('./pages/json-to-type'));
-const JsonFlattenPage = lazy(() => import('./pages/json-flatten'));
-const JsonUnflattenPage = lazy(() => import('./pages/json-unflatten'));
-const JsonToUrlPage = lazy(() => import('./pages/json-to-url'));
+const JsonFormatPage = lazy(() => pRetry(() => import('./pages/json-format')));
+const JsonTreePage = lazy(() => pRetry(() => import('./pages/json-tree')));
+const JsonToTypePage = lazy(() => pRetry(() => import('./pages/json-to-type')));
+const JsonFlattenPage = lazy(() => pRetry(() => import('./pages/json-flatten')));
+const JsonUnflattenPage = lazy(() => pRetry(() => import('./pages/json-unflatten')));
+const JsonToUrlPage = lazy(() => pRetry(() => import('./pages/json-to-url')));
 
 const ListDedupPage = lazy(() => pRetry(() => import('./pages/list-dedup')));
 
-const XmlPage = lazy(() => import('./pages/xml'));
-const ColorPage = lazy(() => import('./pages/color'));
+const XmlPage = lazy(() => pRetry(() => import('./pages/xml')));
+const ColorPage = lazy(() => pRetry(() => import('./pages/color')));
 // 637kB, 需要优化
-const SvgMinifyPage = lazy(() => import('./pages/svg-minify'));
-const SvgToCssPage = lazy(() => import('./pages/svg-to-css'));
-const SvgToUrlPage = lazy(() => import('./pages/svg-to-url'));
-const SvgToReactPage = lazy(() => import('./pages/svg-to-react'));
+const SvgMinifyPage = lazy(() => pRetry(() => import('./pages/svg-minify')));
+const SvgToCssPage = lazy(() => pRetry(() => import('./pages/svg-to-css')));
+const SvgToUrlPage = lazy(() => pRetry(() => import('./pages/svg-to-url')));
+const SvgToReactPage = lazy(() => pRetry(() => import('./pages/svg-to-react')));
 
-const UrlToJsonPage = lazy(() => import('./pages/url-to-json'));
+const UrlToJsonPage = lazy(() => pRetry(() => import('./pages/url-to-json')));
 
 const routes: RouteObject[] = [
   {
