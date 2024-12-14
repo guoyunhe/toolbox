@@ -1,7 +1,5 @@
-import { Avatar, Drawer, List, ListItemText, ListSubheader } from '@mui/material';
+import { Drawer, List, ListItemText, ListSubheader } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import jsonLogo from '../../images/json-logo.svg';
-import svgLogo from '../../images/svg-logo.svg';
 import NavListItemButton from './NavListItemButton';
 
 export default function Sidebar() {
@@ -17,17 +15,7 @@ export default function Sidebar() {
         [`& .MuiDrawer-paper`]: { width: 250, top: 64, boxSizing: 'border-box', zIndex: 0 },
       }}
     >
-      <List
-        subheader={
-          <ListSubheader>
-            <Avatar
-              src={jsonLogo}
-              sx={{ display: 'inline-block', width: 24, height: 24, my: -0.8, mr: 1 }}
-            />
-            JSON
-          </ListSubheader>
-        }
-      >
+      <List subheader={<ListSubheader>JSON</ListSubheader>}>
         <NavListItemButton to="/json-format">{t('JSON format')}</NavListItemButton>
         <NavListItemButton to="/json-flatten">{t('JSON flatten')}</NavListItemButton>
         <NavListItemButton to="/json-unflatten">{t('JSON unflatten')}</NavListItemButton>
@@ -41,17 +29,7 @@ export default function Sidebar() {
       <List subheader={<ListSubheader>{t('List')}</ListSubheader>}>
         <NavListItemButton to="/list-dedup">{t('List dedup')}</NavListItemButton>
       </List>
-      <List
-        subheader={
-          <ListSubheader>
-            <Avatar
-              src={svgLogo}
-              sx={{ display: 'inline-block', width: 24, height: 24, my: -0.5, mr: 1 }}
-            />
-            SVG
-          </ListSubheader>
-        }
-      >
+      <List subheader={<ListSubheader>SVG</ListSubheader>}>
         <NavListItemButton to="svg-minify">
           <ListItemText primary="SVG minify" />
         </NavListItemButton>
