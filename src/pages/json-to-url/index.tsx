@@ -45,13 +45,7 @@ export default function JsonToUrlPage() {
           language="js"
           sx={{ flex: '1 1 50%' }}
         />
-        <Editor
-          title={t('Output')}
-          value={output}
-          disabled
-          language="txt"
-          sx={{ flex: '1 1 50%' }}
-        />
+        <Editor title={t('Output')} value={output} language="txt" sx={{ flex: '1 1 50%' }} />
       </Box>
     </ToolPage>
   );

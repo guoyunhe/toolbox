@@ -12,7 +12,7 @@ export default function JsonPage() {
   const { t } = useTranslation();
   const [input, setInput] = useState(placeholder);
 
-  const [deepParse, setDeepParse] = useLocalStorage('json_deep_parse', true);
+  const [deepParse, setDeepParse] = useLocalStorage('json_to_type_deep_parse', true);
   const [sortKeys, setSortKeys] = useLocalStorage('json_to_type_alphabetize_properties', false);
   const [optional, setOptional] = useLocalStorage('json_to_type_all_properties_optional', false);
   const [preferUnions, setPreferUnions] = useLocalStorage('json_to_type_prefer_unions', false);

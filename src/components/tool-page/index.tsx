@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { ReactNode } from 'react';
 
 export interface ToolPageProps {
@@ -20,7 +20,7 @@ export default function ToolPage({ title, description, settings, children }: Too
           <Typography variant="h1">{title}</Typography>
           <Typography variant="caption">{description}</Typography>
         </Box>
-        <Stack sx={{ gap: 2 }}>{settings}</Stack>
+        {settings}
       </Box>
       <Box sx={{ flex: '1 1 auto', display: 'flex' }}>{children}</Box>
     </Box>
