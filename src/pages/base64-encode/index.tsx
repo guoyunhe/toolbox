@@ -10,13 +10,13 @@ export default function Base64DecodePage() {
   const [input, setInput] = useState(placeholder);
 
   const output = useMemo(() => {
-    const binString = atob(input.trim());
-    const bytes = Uint8Array.from(binString, (m) => m.codePointAt(0)!);
-    return new TextDecoder().decode(bytes);
+    const bytes = new TextEncoder().encode(input.trim());
+    const binString = Array.from(bytes, (byte) => String.fromCodePoint(byte)).join('');
+    return btoa(binString);
   }, [input]);
 
   return (
-    <ToolPage title={t('Base64 decode')}>
+    <ToolPage title={t('Base64 encode')}>
       <Box sx={{ flex: '1 1 auto', display: 'flex', gap: 1, overflow: 'hidden' }}>
         <Editor
           title={t('Input')}

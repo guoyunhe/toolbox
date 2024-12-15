@@ -32,6 +32,7 @@ export default function Sidebar() {
       </List>
       <List subheader={<ListSubheader>Base64</ListSubheader>}>
         <NavListItemButton to="/base64-decode">{t('Base64 decode')}</NavListItemButton>
+        <NavListItemButton to="/base64-encode">{t('Base64 encode')}</NavListItemButton>
       </List>
       <List subheader={<ListSubheader>SVG</ListSubheader>}>
         <NavListItemButton to="/svg-minify">

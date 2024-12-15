@@ -4,6 +4,7 @@ import { Navigate, RouteObject, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/app';
 
 const Base64DecodePage = lazy(() => pRetry(() => import('./pages/base64-decode')));
+const Base64EncodePage = lazy(() => pRetry(() => import('./pages/base64-encode')));
 
 const JsonFormatPage = lazy(() => pRetry(() => import('./pages/json-format')));
 const JsonToTypePage = lazy(() => pRetry(() => import('./pages/json-to-type')));
@@ -36,6 +37,10 @@ const routes: RouteObject[] = [
       {
         path: 'base64-decode',
         element: <Base64DecodePage />,
+      },
+      {
+        path: 'base64-encode',
+        element: <Base64EncodePage />,
       },
       {
         path: 'json-format',

@@ -14,6 +14,7 @@
   "List dedup": "List dedup",
   "List shuffle/randomize": "List shuffle/randomize",
   "Base64 decode": "Base64 decode",
+  "Base64 encode": "Base64 encode",
   "Upload": "Upload",
   "Input": "Input",
   "Output": "Output",
