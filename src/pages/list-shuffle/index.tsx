@@ -25,7 +25,7 @@ export default function ListShufflePage() {
 
   return (
     <ToolPage
-      title={t('List shuffle')}
+      title={t('List shuffle/randomize')}
       settings={
         <Button
           variant="contained"

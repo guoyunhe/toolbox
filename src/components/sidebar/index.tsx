@@ -28,7 +28,7 @@ export default function Sidebar() {
       </List>
       <List subheader={<ListSubheader>{t('List')}</ListSubheader>}>
         <NavListItemButton to="/list-dedup">{t('List dedup')}</NavListItemButton>
-        <NavListItemButton to="/list-shuffle">{t('List shuffle')}</NavListItemButton>
+        <NavListItemButton to="/list-shuffle">{t('List shuffle/randomize')}</NavListItemButton>
       </List>
       <List subheader={<ListSubheader>SVG</ListSubheader>}>
         <NavListItemButton to="svg-minify">

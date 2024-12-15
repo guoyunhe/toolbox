@@ -12,7 +12,7 @@
   "JSON unflatten": "JSON unflatten",
   "List": "List",
   "List dedup": "List dedup",
-  "List shuffle": "List shuffle",
+  "List shuffle/randomize": "List shuffle/randomize",
   "Upload": "Upload",
   "Color": "Color",
   "Support name, hex, rgba, hsl, cmyk": "Support name, hex, rgba, hsl, cmyk",
@@ -24,6 +24,7 @@
   "Make all properties optional": "Make all properties optional",
   "ENUMs to unions": "ENUMs to unions",
   "Infer date/time": "Infer date/time",
+  "Shuffle": "Shuffle",
   "Minfied SVG": "Minfied SVG",
   "React component": "React component"
 }

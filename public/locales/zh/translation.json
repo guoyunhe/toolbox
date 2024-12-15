@@ -12,7 +12,7 @@
   "JSON unflatten": "JSON 去扁平化",
   "List": "列表",
   "List dedup": "列表去重",
-  "List shuffle": "列表打乱",
+  "List shuffle/randomize": "列表打乱/随机",
   "Upload": "上传",
   "Color": "颜色",
   "Support name, hex, rgba, hsl, cmyk": "支持名称，十六进制，rgba，hsl，cmyk",
@@ -24,6 +24,7 @@
   "Make all properties optional": "全部属性可选",
   "ENUMs to unions": "枚举转联合类型",
   "Infer date/time": "推断 Date 类型",
+  "Shuffle": "打乱",
   "Minfied SVG": "压缩的 SVG",
   "React component": "React 组件"
 }
