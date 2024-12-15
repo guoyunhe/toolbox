@@ -1,6 +1,6 @@
 import pRetry from 'p-retry';
 import { lazy } from 'react';
-import { RouteObject, createBrowserRouter } from 'react-router-dom';
+import { Navigate, RouteObject, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/app';
 
 const JsonFormatPage = lazy(() => pRetry(() => import('./pages/json-format')));
@@ -27,6 +27,10 @@ const routes: RouteObject[] = [
     path: '/',
     element: <AppLayout />,
     children: [
+      {
+        path: '/',
+        element: <Navigate to="/json-format" />,
+      },
       {
         path: 'json-format',
         element: <JsonFormatPage />,
