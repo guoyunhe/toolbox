@@ -10,6 +10,7 @@ const JsonUnflattenPage = lazy(() => pRetry(() => import('./pages/json-unflatten
 const JsonToUrlPage = lazy(() => pRetry(() => import('./pages/json-to-url')));
 
 const ListDedupPage = lazy(() => pRetry(() => import('./pages/list-dedup')));
+const ListShufflePage = lazy(() => pRetry(() => import('./pages/list-shuffle')));
 
 const XmlPage = lazy(() => pRetry(() => import('./pages/xml')));
 const ColorPage = lazy(() => pRetry(() => import('./pages/color')));
@@ -49,6 +50,10 @@ const routes: RouteObject[] = [
       {
         path: 'list-dedup',
         element: <ListDedupPage />,
+      },
+      {
+        path: 'list-shuffle',
+        element: <ListShufflePage />,
       },
       {
         path: 'url-to-json',
