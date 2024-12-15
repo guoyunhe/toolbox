@@ -1,4 +1,5 @@
-import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { GitHub } from '@mui/icons-material';
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { PaletteModeButton } from 'mui-palette-mode';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -20,6 +21,11 @@ export default function Navbar() {
         </Box>
 
         <Box flex="1 1 auto" />
+
+        <Button color="inherit" startIcon={<GitHub />} href="https://github.com/guoyunhe/toolbox">
+          GitHub
+        </Button>
+
         <LanguageMenu />
         <PaletteModeButton />
       </Toolbar>

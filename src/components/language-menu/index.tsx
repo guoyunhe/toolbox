@@ -1,7 +1,8 @@
-import { Box, Button, Menu, MenuItem } from '@mui/material';
+import { Button, Menu, MenuItem } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Language } from '@mui/icons-material';
 import { languages } from '../../config/i18n';
 
 export default function LanguageMenu() {
@@ -28,7 +29,7 @@ export default function LanguageMenu() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         color="inherit"
-        startIcon={<Box fontSize={24}>{currentLang?.flag}</Box>}
+        startIcon={<Language />}
       >
         {currentLang?.name}
       </Button>
@@ -61,7 +62,7 @@ export default function LanguageMenu() {
             }}
             selected={lang.code === currentLang?.code}
           >
-            {lang.flag} {lang.name}
+            {lang.flag}&nbsp;{lang.name}
           </MenuItem>
         ))}
       </Menu>
