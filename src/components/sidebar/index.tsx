@@ -30,8 +30,11 @@ export default function Sidebar() {
         <NavListItemButton to="/list-dedup">{t('List dedup')}</NavListItemButton>
         <NavListItemButton to="/list-shuffle">{t('List shuffle/randomize')}</NavListItemButton>
       </List>
+      <List subheader={<ListSubheader>Base64</ListSubheader>}>
+        <NavListItemButton to="/base64-decode">{t('Base64 decode')}</NavListItemButton>
+      </List>
       <List subheader={<ListSubheader>SVG</ListSubheader>}>
-        <NavListItemButton to="svg-minify">
+        <NavListItemButton to="/svg-minify">
           <ListItemText primary="SVG minify" />
         </NavListItemButton>
         <NavListItemButton to="/svg-to-url">
