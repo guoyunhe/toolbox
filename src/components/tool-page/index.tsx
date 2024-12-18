@@ -1,3 +1,4 @@
+import { Adsense } from '@ctrl/react-adsense';
 import { Box, Typography } from '@mui/material';
 import { ReactNode } from 'react';
 
@@ -21,6 +22,13 @@ export default function ToolPage({ title, description, settings, children }: Too
           <Typography variant="caption">{description}</Typography>
         </Box>
         {settings}
+        <Adsense
+          client="ca-pub-7099046271205844"
+          slot="1634674316"
+          style={{ display: 'block' }}
+          format="auto"
+          responsive="true"
+        />
       </Box>
       <Box sx={{ flex: '1 1 auto', display: 'flex' }}>{children}</Box>
     </Box>
