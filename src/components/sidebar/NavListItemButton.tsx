@@ -1,5 +1,5 @@
 import { ListItemButton, ListItemButtonProps } from '@mui/material';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router';
 
 export interface NavListItemButtonProps extends ListItemButtonProps {
   to: string;

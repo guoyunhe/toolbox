@@ -1,6 +1,6 @@
 import { Box, colors, Link, Stack } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router';
 
 const date = new Date();
 

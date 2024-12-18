@@ -1,6 +1,6 @@
 import pRetry from 'p-retry';
 import { lazy } from 'react';
-import { Navigate, RouteObject, createBrowserRouter } from 'react-router-dom';
+import { Navigate, RouteObject, createBrowserRouter } from 'react-router';
 import AppLayout from './layouts/app';
 
 const Base64DecodePage = lazy(() => pRetry(() => import('./pages/base64-decode')));

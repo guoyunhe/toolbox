@@ -2,7 +2,7 @@ import { GitHub } from '@mui/icons-material';
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { PaletteModeButton } from 'mui-palette-mode';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import LanguageMenu from '../language-menu';
 
 export default function Navbar() {

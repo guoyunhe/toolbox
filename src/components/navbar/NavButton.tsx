@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { ReactNode } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router';
 
 export interface NavButtonProps {
   to: string;

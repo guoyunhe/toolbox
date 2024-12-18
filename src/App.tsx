@@ -2,7 +2,7 @@ import { Box, CircularProgress, CssBaseline } from '@mui/material';
 import { DualThemeProvider } from 'mui-palette-mode';
 import { Suspense } from 'react';
 import { Trans } from 'react-i18next';
-import { RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router';
 import router from './router';
 import { darkTheme, lightTheme } from './themes';
 
