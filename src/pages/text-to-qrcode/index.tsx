@@ -45,7 +45,7 @@ export default function TextToQRCodePage() {
             }}
           >
             <Box sx={{ bgcolor: '#ffffff', p: 1 }}>
-              <QRCode value={input} style={{ display: 'block' }} />
+              <QRCode value={input?.trim()} style={{ display: 'block' }} />
             </Box>
           </Box>
         </Box>
