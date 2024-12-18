@@ -23,6 +23,8 @@ const SvgToCssPage = lazy(() => pRetry(() => import('./pages/svg-to-css')));
 const SvgToUrlPage = lazy(() => pRetry(() => import('./pages/svg-to-url')));
 const SvgToReactPage = lazy(() => pRetry(() => import('./pages/svg-to-react')));
 
+const TextToQRCodePage = lazy(() => pRetry(() => import('./pages/text-to-qrcode')));
+
 const UrlToJsonPage = lazy(() => pRetry(() => import('./pages/url-to-json')));
 
 const routes: RouteObject[] = [
@@ -69,6 +71,10 @@ const routes: RouteObject[] = [
       {
         path: 'list-shuffle',
         element: <ListShufflePage />,
+      },
+      {
+        path: 'text-to-qrcode',
+        element: <TextToQRCodePage />,
       },
       {
         path: 'url-to-json',

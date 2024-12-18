@@ -34,6 +34,11 @@ export default function Sidebar() {
         <NavListItemButton to="/base64-decode">{t('Base64 decode')}</NavListItemButton>
         <NavListItemButton to="/base64-encode">{t('Base64 encode')}</NavListItemButton>
       </List>
+      <List subheader={<ListSubheader>{t('QR code')}</ListSubheader>}>
+        <NavListItemButton to="/text-to-qrcode">
+          {t('Text')} ➡️ {t('QR code')}
+        </NavListItemButton>
+      </List>
       <List subheader={<ListSubheader>SVG</ListSubheader>}>
         <NavListItemButton to="/svg-minify">
           <ListItemText primary="SVG minify" />

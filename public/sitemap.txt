@@ -28,6 +28,9 @@ https://toolbox.guoyunhe.me/list-dedup?locale=zh
 https://toolbox.guoyunhe.me/list-shuffle
 https://toolbox.guoyunhe.me/list-shuffle?locale=en
 https://toolbox.guoyunhe.me/list-shuffle?locale=zh
+https://toolbox.guoyunhe.me/text-to-qrcode
+https://toolbox.guoyunhe.me/text-to-qrcode?locale=en
+https://toolbox.guoyunhe.me/text-to-qrcode?locale=zh
 https://toolbox.guoyunhe.me/url-to-json
 https://toolbox.guoyunhe.me/url-to-json?locale=en
 https://toolbox.guoyunhe.me/url-to-json?locale=zh
