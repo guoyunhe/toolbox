@@ -111,9 +111,10 @@ export default function Editor({
               <Fragment key={i}>
                 {line
                   .filter((token) => !token.empty)
-                  .map((token, key) => (
-                    <span key={key} {...getTokenProps({ token, key })} />
-                  ))}
+                  .map((token, index2) => {
+                    const { key, ...rest } = getTokenProps({ token, key: index2 });
+                    return <span key={key as number} {...rest} />;
+                  })}
                 {'\n'}
               </Fragment>
             ))}
