@@ -1,8 +1,8 @@
 import { useSessionStorage } from '@guoyunhe/react-storage';
 import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
-import Editor from '../../components/editor';
-import defaultSvg from '../../data/default-svg.svg?raw';
+import Editor from '~/components/editor';
+import defaultSvg from '~/data/default-svg.svg?raw';
 
 export default function SvgToCssPage() {
   const [svgCode, setSvgCode] = useSessionStorage('svg_input', defaultSvg);

@@ -3,8 +3,8 @@ import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import xior from 'xior';
-import Editor from '../../components/editor';
-import defaultSvg from '../../data/default-svg.svg?raw';
+import Editor from '~/components/editor';
+import defaultSvg from '~/data/default-svg.svg?raw';
 
 export default function SvgToReactPage() {
   const { t } = useTranslation();

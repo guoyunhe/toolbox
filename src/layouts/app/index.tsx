@@ -1,8 +1,8 @@
 import { Box, CircularProgress } from '@mui/material';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router';
-import Navbar from '../../components/navbar';
-import Sidebar from '../../components/sidebar';
+import Navbar from '~/components/navbar';
+import Sidebar from '~/components/sidebar';
 
 export default function AppLayout() {
   return (

@@ -2,9 +2,9 @@ import { useLocalStorage } from '@guoyunhe/react-storage';
 import { Box, FormControlLabel, Stack, Switch } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import Editor from '~/components/editor';
 import ToolPage from '~/components/tool-page';
 import useJsonParse from '~/hooks/use-json-parse';
-import Editor from '../../components/editor';
 import jsonToType from './jsonToType';
 import placeholder from './placeholder.json?raw';
 

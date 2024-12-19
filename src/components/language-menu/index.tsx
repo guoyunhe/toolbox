@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Language } from '@mui/icons-material';
-import { languages } from '../../config/i18n';
+import { languages } from '~/config/i18n';
 
 export default function LanguageMenu() {
   const { i18n } = useTranslation();

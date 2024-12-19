@@ -1,7 +1,7 @@
 import { Download as DownloadIcon } from '@mui/icons-material';
 import { Button, ButtonProps } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import byteSize from '../../utils/byteSize';
+import byteSize from '~/utils/byteSize';
 
 export interface DownloadButtonProps extends ButtonProps {
   data: string;
