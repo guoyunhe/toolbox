@@ -41,9 +41,9 @@ export default function JsonFormatPage() {
           value={input}
           onChange={setInput}
           language="js"
-          sx={{ flex: '1 1 auto' }}
+          sx={{ flex: '1 1 50%' }}
         />
-        <Editor title={t('Output')} value={output} language="js" sx={{ flex: '1 1 auto' }} />
+        <Editor title={t('Output')} value={output} language="js" sx={{ flex: '1 1 50%' }} />
       </Box>
     </ToolPage>
   );

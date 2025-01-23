@@ -38,7 +38,7 @@ export default function TextToQRCodePage() {
           </Toolbar>
           <Box
             sx={{
-              flex: '1 1 auto',
+              flex: '1 1 50%',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
