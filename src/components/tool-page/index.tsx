@@ -11,7 +11,7 @@ export interface ToolPageProps {
 
 export default function ToolPage({ title, description, settings, children }: ToolPageProps) {
   return (
-    <Box sx={{ flex: '1 1 auto', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ flex: '1 1 auto', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       <title>{title}</title>
       <Box
         component="header"
@@ -30,7 +30,7 @@ export default function ToolPage({ title, description, settings, children }: Too
           responsive="true"
         />
       </Box>
-      <Box sx={{ flex: '1 1 auto', display: 'flex' }}>{children}</Box>
+      <Box sx={{ flex: '1 1 auto', display: 'flex', overflow: 'hidden' }}>{children}</Box>
     </Box>
   );
 }

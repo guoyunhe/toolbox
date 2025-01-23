@@ -35,7 +35,7 @@ export default function JsonFormatPage() {
         </Stack>
       }
     >
-      <Box sx={{ flex: '1 1 100%', display: 'flex', gap: 1 }}>
+      <Box sx={{ flex: '1 1 100%', display: 'flex', gap: 1, overflow: 'hidden' }}>
         <Editor
           title={t('Input')}
           value={input}
