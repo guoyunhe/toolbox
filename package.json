@@ -57,9 +57,9 @@
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@guoyunhe/react-storage": "^1.1.0",
-    "@mui/icons-material": "^5.16.9",
-    "@mui/lab": "5.0.0-alpha.170",
-    "@mui/material": "^5.16.9",
+    "@mui/icons-material": "^9.0.1",
+    "@mui/lab": "9.0.0-beta.3",
+    "@mui/material": "^9.0.1",
     "color": "^4.2.3",
     "color-name": "^2.0.0",
     "fast-shuffle": "^6.1.1",
@@ -127,5 +127,15 @@
     "vite-plugin-adsense": "^1.1.1",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^2.1.8"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [],
+      "allowedVersions": {
+        "mui-palette-mode>@mui/material": "^9",
+        "mui-palette-mode>@mui/icons-material": "^9",
+        "mui-material-compact>@mui/material": "^9"
+      }
+    }
   }
 }

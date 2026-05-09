@@ -6,7 +6,7 @@ import Sidebar from '~/components/sidebar';
 
 export default function AppLayout() {
   return (
-    <Box height="100vh" display="flex" flexDirection="column" overflow="hidden">
+    <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       <Navbar />
       <Box
         sx={{

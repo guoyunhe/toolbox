@@ -15,12 +15,12 @@ export default function Navbar() {
           to="/"
           sx={{ display: 'flex', color: 'inherit', textDecoration: 'none', mr: 2 }}
         >
-          <Typography fontSize={20} color="inherit" component="div">
+          <Typography sx={{ fontSize: 20 }} color="inherit" component="div">
             🧰 {t('Toolbox by Guo Yunhe')}
           </Typography>
         </Box>
 
-        <Box flex="1 1 auto" />
+        <Box sx={{ flex: '1 1 auto' }} />
 
         <Button color="inherit" startIcon={<GitHub />} href="https://github.com/guoyunhe/toolbox">
           GitHub

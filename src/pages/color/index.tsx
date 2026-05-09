@@ -24,7 +24,7 @@ export default function ColorPage() {
   );
   return (
     <Box>
-      <Stack direction="row" spacing={2} p={2}>
+      <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         <TextField
           label={t('Color')}
           helperText={t('Support name, hex, rgba, hsl, cmyk')}
