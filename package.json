@@ -94,13 +94,13 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/color": "^3.0.6",
     "@types/color-name": "^1.1.5",
-    "@types/node": "^20.17.9",
+    "@types/node": "^20.19.0",
     "@types/react": "^18.3.14",
     "@types/react-dom": "^18.3.2",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "@vitejs/plugin-react-swc": "^3.7.2",
-    "@vitest/ui": "^2.1.8",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/ui": "^4.1.5",
     "bing-translate-api": "^4.0.2",
     "commitlint-config-ali": "^1.1.0",
     "eslint": "^8.57.1",
@@ -123,19 +123,8 @@
     "stylelint-prettier": "^5.0.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
-    "vite": "^5.4.11",
-    "vite-plugin-adsense": "^1.1.1",
-    "vite-tsconfig-paths": "^4.3.2",
-    "vitest": "^2.1.8"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [],
-      "allowedVersions": {
-        "mui-palette-mode>@mui/material": "^9",
-        "mui-palette-mode>@mui/icons-material": "^9",
-        "mui-material-compact>@mui/material": "^9"
-      }
-    }
+    "vite": "^8.0.11",
+    "vite-plugin-adsense": "^1.2.0",
+    "vitest": "^4.1.5"
   }
 }
