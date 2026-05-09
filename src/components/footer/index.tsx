@@ -7,9 +7,12 @@ const date = new Date();
 export default function Footer() {
   const { t } = useTranslation();
   return (
-    <Box component="footer" p={3} display="flex" fontSize="14px" color={colors.grey[700]}>
+    <Box
+      component="footer"
+      sx={{ p: 3, display: 'flex', fontSize: '14px', color: colors.grey[700] }}
+    >
       <Box>&copy; {date.getFullYear()} Guo Yunhe</Box>
-      <Box flex="1 1 auto" />
+      <Box sx={{ flex: '1 1 auto' }} />
       <Stack direction="row" spacing={2}>
         <Link component={RouterLink} to="/terms" color="inherit" underline="hover">
           {t('Terms')}

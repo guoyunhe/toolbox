@@ -49,8 +49,10 @@ export default function LanguageMenu() {
           vertical: 'top',
           horizontal: 'right',
         }}
-        MenuListProps={{
-          'aria-labelledby': 'lang-menu-button',
+        slotProps={{
+          list: {
+            'aria-labelledby': 'lang-menu-button',
+          },
         }}
       >
         {languages.map((lang) => (
