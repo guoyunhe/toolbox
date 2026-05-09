@@ -2,7 +2,6 @@
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 import adsense from 'vite-plugin-adsense';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,12 +9,15 @@ export default defineConfig({
     process: '{ "env": {} }',
     global: 'window',
   },
+  resolve: {
+    tsconfigPaths: true,
+  },
   server: {
     host: true,
     port: 3000,
     open: true,
   },
-  plugins: [react(), tsconfigPaths(), adsense()],
+  plugins: [react(), adsense()],
   // https://vitest.dev/config/
   test: {
     coverage: {
