@@ -99,7 +99,7 @@
     "@types/react-dom": "^18.3.2",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "@vitejs/plugin-react-swc": "^4.3.0",
+    "@vitejs/plugin-react": "^6.0.1",
     "@vitest/ui": "^4.1.5",
     "bing-translate-api": "^4.0.2",
     "commitlint-config-ali": "^1.1.0",
